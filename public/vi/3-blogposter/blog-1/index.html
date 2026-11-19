@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.168.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>BlogPost :: Tạo mới tài khoản AWS</title>
+
+    
+    <link href="/css/nucleus.css?1795060292" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1795060292" rel="stylesheet">
+    <link href="/css/hybrid.css?1795060292" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1795060292" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1795060292" rel="stylesheet">
+    <link href="/css/auto-complete.css?1795060292" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1795060292" rel="stylesheet">
+    <link href="/css/theme.css?1795060292" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1795060292" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1795060292" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1795060292"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/vi/3-blogposter/blog-1/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1795060292"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1795060292"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost:1313\/\/vi";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1795060292"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/" title="Nhật ký công việc" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/">
+          <b> 1. </b> Nhật ký công việc
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.1-week1-worklog/" title="Worklog Tuần 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.1-week1-worklog/">
+           <b> 1.1. </b> Worklog Tuần 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.2-week2-worklog/" title="Worklog Tuần 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.2-week2-worklog/">
+           <b> 1.2. </b> Worklog Tuần 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.3-week3-worklog/" title="Worklog Tuần 3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.3-week3-worklog/">
+           <b> 1.3. </b> Worklog Tuần 3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.4-week4-worklog/" title="Worklog Tuần 4" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.4-week4-worklog/">
+           <b> 1.4. </b> Worklog Tuần 4
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.5-week5-worklog/" title="Worklog Tuần 5" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.5-week5-worklog/">
+           <b> 1.5. </b> Worklog Tuần 5
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.6-week6-worklog/" title="Worklog Tuần 6" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.6-week6-worklog/">
+           <b> 1.6. </b> Worklog Tuần 6
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/vi/1-worklog/1.7-week7-worklog/1.7-week7_index/" title="Worklog Tuần 7" class="dd-item ">
+        <a href="/vi/1-worklog/1.7-week7-worklog/1.7-week7_index/">
+         <b> 1.7. </b> Worklog Tuần 7
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.8-week8-worklog/" title="Worklog Tuần 8" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.8-week8-worklog/">
+           <b> 1.8. </b> Worklog Tuần 8
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.9-week9-worklog/" title="Worklog Tuần 9" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.9-week9-worklog/">
+           <b> 1.9. </b> Worklog Tuần 9
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.10-week10-worklog/" title="Worklog Tuần 10" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.10-week10-worklog/">
+           <b> 1.10. </b> Worklog Tuần 10
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.11-week11-worklog/" title="Worklog Tuần 11" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.11-week11-worklog/">
+           <b> 1.11. </b> Worklog Tuần 11
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.12-week12-worklog/" title="Worklog Tuần 12" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.12-week12-worklog/">
+           <b> 1.12. </b> Worklog Tuần 12
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-proposal/" title="Bản đề xuất" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-proposal/">
+           <b> 2. </b> Bản đề xuất
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-blogposter/" title="3. bài viết đã đăng" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/vi/3-blogposter/">
+          3. bài viết đã đăng
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-blogposter/blog-1/" title="BlogPost" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/vi/3-blogposter/blog-1/">
+           <b> 3.1 </b> BlogPost
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-blogposter/blog-2/" title="BlogPost" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-blogposter/blog-2/">
+           <b> 3.2 </b> BlogPost
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-blogposter/blog-3/" title="BlogPost" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-blogposter/blog-3/">
+           <b> 3.3 </b> BlogPost
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-event-participate/" title="Event đã tham gia" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-event-participate/">
+           <b> 4. </b> Event đã tham gia
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-event-participate/event-1/" title="4.1 Company Visit: Amazon Web Services – 14 tháng 11, 2026" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-event-participate/event-1/">
+          4.1 Company Visit: Amazon Web Services – 14 tháng 11, 2026
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-event-participate/event-2/" title="4.2 buổi setup nhỏ – 17 tháng 10, 2026" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-event-participate/event-2/">
+          4.2 buổi setup nhỏ – 17 tháng 10, 2026
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/" title="Workshop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/">
+           <b> 5. </b> Workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.1-introduction/" title="Giới thiệu và kiến trúc" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.1-introduction/">
+           <b> 5.1 </b> Giới thiệu và kiến trúc
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.2-prerequisite/" title="Chuẩn bị (IAM, region, công cụ)" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.2-prerequisite/">
+           <b> 5.2 </b> Chuẩn bị (IAM, region, công cụ)
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.3-sqs-dlq/" title="Hàng đợi và DLQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.3-sqs-dlq/">
+           <b> 5.3 </b> Hàng đợi và DLQ
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.4-idempotency/" title="Chống xử lý trùng" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.4-idempotency/">
+           <b> 5.4 </b> Chống xử lý trùng
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.5-orchestration/" title="Điều phối và thông báo" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.5-orchestration/">
+           <b> 5.5 </b> Điều phối và thông báo
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.6-monitoring/" title="Giám sát" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.6-monitoring/">
+           <b> 5.6 </b> Giám sát
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.7-experiment/" title="Thực nghiệm lỗi và tải" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.7-experiment/">
+           <b> 5.7 </b> Thực nghiệm lỗi và tải
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.8-clean-up/" title="Clean up" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.8-clean-up/">
+           <b> 5.8 </b> Clean up
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-self-assessment/" title="Tự đánh giá" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/6-self-assessment/">
+           <b> 6 </b> Tự đánh giá
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-sharing-and-feedback/" title="Chia sẻ, đóng góp ý kiến" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/7-sharing-and-feedback/">
+           <b> 7. </b> Chia sẻ, đóng góp ý kiến
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="http://awsstudygroup.com"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="http://localhost:1313/3-blogposter/blog-1/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="http://localhost:1313/vi/3-blogposter/blog-1/" selected>Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/vi/'></a> > <a href='/vi/3-blogposter/'>3. bài viết đã đăng</a> > BlogPost
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              BlogPost
+            </h1>
+          
+
+        
+
+
+
+	<h1 id="xây-dựng-hệ-thống-xử-lý-đơn-hàng-ổn-định-trên-aws-với-sqs-lambda-và-cloudwatch">XÂY DỰNG HỆ THỐNG XỬ LÝ ĐƠN HÀNG ỔN ĐỊNH TRÊN AWS VỚI SQS, LAMBDA VÀ CLOUDWATCH</h1>
+<p>Khi mua hàng trên một trang thương mại điện tử, chúng ta thường mong muốn đơn hàng được xử lý nhanh chóng và chính xác. Tuy nhiên, phía sau một thao tác đặt hàng đơn giản có thể là rất nhiều thành phần hoạt động cùng lúc.</p>
+<p>Vậy nếu hệ thống gặp lỗi, chẳng hạn như dịch vụ xử lý đơn hàng bị gián đoạn hoặc có quá nhiều yêu cầu gửi đến cùng lúc, thì điều gì sẽ xảy ra?</p>
+<p>Trong quá trình tìm hiểu AWS, mình nhận thấy Amazon SQS, AWS Lambda và Amazon CloudWatch là những dịch vụ có thể kết hợp để xây dựng một hệ thống xử lý đơn hàng linh hoạt và có khả năng chịu lỗi tốt hơn.</p>
+<h1 id="i-tại-sao-hệ-thống-cần-có-hàng-đợi">I. TẠI SAO HỆ THỐNG CẦN CÓ HÀNG ĐỢI?</h1>
+<p>Hãy tưởng tượng một website bán hàng nhận được hàng nghìn đơn hàng trong thời gian ngắn. Nếu mỗi yêu cầu đều phải chờ hệ thống xử lý hoàn tất ngay lập tức, máy chủ có thể bị quá tải.</p>
+<p>Để giải quyết vấn đề này, chúng ta có thể sử dụng Amazon Simple Queue Service (SQS).
+SQS là dịch vụ hàng đợi thông điệp của AWS, cho phép lưu trữ các thông điệp để những thành phần khác xử lý vào thời điểm phù hợp.</p>
+<p>Một số lợi ích của SQS:</p>
+<ul>
+<li>Giúp tách biệt thành phần gửi yêu cầu và thành phần xử lý.</li>
+<li>Hạn chế việc các dịch vụ phụ thuộc trực tiếp vào nhau.</li>
+<li>Có thể lưu giữ thông điệp khi hệ thống xử lý tạm thời gặp sự cố.</li>
+<li>Hỗ trợ xử lý các yêu cầu theo cơ chế bất đồng bộ.
+Ví dụ: Khi khách hàng đặt hàng, thông tin đơn hàng được gửi vào SQS. Thay vì phải xử lý ngay toàn bộ công việc, hệ thống có thể tiếp nhận đơn hàng và đưa vào hàng đợi để xử lý sau.</li>
+</ul>
+<h1 id="ii-kết-hợp-sqs-với-aws-lambda">II. KẾT HỢP SQS VỚI AWS LAMBDA</h1>
+<p>Nếu SQS có nhiệm vụ lưu trữ thông điệp thì AWS Lambda đảm nhiệm việc thực thi mã xử lý.
+Lambda là dịch vụ điện toán không máy chủ (Serverless) của AWS. Người phát triển chỉ cần viết mã xử lý mà không phải tự quản lý máy chủ.</p>
+<p>Khi kết hợp hai dịch vụ, luồng hoạt động có thể diễn ra như sau:</p>
+<ul>
+<li>Khách hàng gửi yêu cầu đặt hàng.</li>
+<li>Hệ thống đưa thông tin đơn hàng vào SQS.</li>
+<li>AWS Lambda nhận thông điệp từ hàng đợi.</li>
+<li>Lambda thực hiện các công việc như kiểm tra thông tin và lưu đơn hàng vào cơ sở dữ liệu.</li>
+<li>Sau khi xử lý thành công, thông điệp được xóa khỏi hàng đợi.
+Cách kết hợp này giúp hệ thống xử lý công việc linh hoạt hơn, đặc biệt khi lượng yêu cầu tăng đột biến.</li>
+</ul>
+<h1 id="iii-retry-và-dead-letter-queue-dlq">III. RETRY VÀ DEAD LETTER QUEUE (DLQ)</h1>
+<p>Một vấn đề quan trọng trong hệ thống phân tán là lỗi có thể xảy ra bất cứ lúc nào.</p>
+<p>Ví dụ, Lambda không thể kết nối đến cơ sở dữ liệu hoặc gặp lỗi trong quá trình xử lý đơn hàng. Khi đó, thông điệp chưa được xử lý thành công sẽ không bị xóa khỏi SQS và có thể được nhận lại sau khi hết thời gian Visibility Timeout.
+Đây chính là cơ chế Retry (thử xử lý lại).</p>
+<p>Tuy nhiên, nếu một thông điệp liên tục gặp lỗi, hệ thống không nên thử lại vô hạn. AWS cung cấp cơ chế Dead Letter Queue (DLQ) để giải quyết vấn đề này.</p>
+<p>DLQ là một hàng đợi riêng dùng để lưu những thông điệp đã thất bại nhiều lần.
+Ví dụ:</p>
+<ul>
+<li>Đơn hàng được đưa vào SQS.</li>
+<li>Lambda nhận và xử lý nhưng gặp lỗi.</li>
+<li>Thông điệp được thử xử lý lại.</li>
+<li>Sau khi vượt quá số lần nhận tối đa được cấu hình, thông điệp được chuyển sang DLQ.
+Một số lợi ích của DLQ:</li>
+<li>Tránh thông điệp lỗi liên tục làm ảnh hưởng đến quá trình xử lý chung.</li>
+<li>Giúp xác định những yêu cầu không thể xử lý thành công.</li>
+<li>Cho phép kiểm tra nguyên nhân và xử lý lại thông điệp khi đã khắc phục lỗi.
+<img src="/images/blogpicture/blog1.jpg" alt="AWS"></li>
+</ul>
+<h1 id="iv-idempotency--tránh-xử-lý-trùng-đơn-hàng">IV. IDEMPOTENCY – TRÁNH XỬ LÝ TRÙNG ĐƠN HÀNG</h1>
+<p>Một điều mình thấy khá thú vị khi tìm hiểu hệ thống sử dụng SQS và Lambda là: một thông điệp có thể được xử lý nhiều lần.</p>
+<p>Điều này có thể xảy ra khi Lambda đã thực hiện xong một phần công việc nhưng gặp lỗi trước khi thông điệp được xác nhận thành công.</p>
+<p>Nếu không có biện pháp kiểm soát, khách hàng có thể bị tạo nhiều đơn hàng giống nhau hoặc bị ghi nhận thanh toán trùng lặp.</p>
+<p>Để hạn chế vấn đề này, chúng ta sử dụng khái niệm Idempotency (tính lũy đẳng).
+Hiểu đơn giản, dù một yêu cầu được gửi hoặc xử lý nhiều lần thì kết quả nghiệp vụ vẫn không bị thực hiện trùng.
+Ví dụ:</p>
+<ul>
+<li>Mỗi đơn hàng có một mã định danh riêng như ORDER_001.</li>
+<li>Trước khi tạo đơn hàng, hệ thống kiểm tra mã này.</li>
+<li>Nếu đơn hàng đã được ghi nhận, hệ thống không thực hiện lại thao tác tạo đơn.</li>
+<li>Nếu chưa tồn tại, hệ thống mới tiến hành xử lý.</li>
+<li>Có thể sử dụng DynamoDB Conditional Write để kiểm soát việc tạo bản ghi theo điều kiện, hạn chế tình trạng hai yêu cầu đồng thời cùng tạo một đơn hàng.</li>
+</ul>
+<h1 id="v-giám-sát-hệ-thống-với-amazon-cloudwatch">V. GIÁM SÁT HỆ THỐNG VỚI AMAZON CLOUDWATCH</h1>
+<p>Xây dựng hệ thống là chưa đủ. Chúng ta còn cần biết hệ thống đang hoạt động như thế nào và có gặp lỗi hay không.</p>
+<p>Đây là lúc Amazon CloudWatch phát huy vai trò.
+CloudWatch là dịch vụ giám sát của AWS, hỗ trợ thu thập và theo dõi dữ liệu hoạt động của các tài nguyên.</p>
+<p>Một số thành phần quan trọng:</p>
+<ol>
+<li>CloudWatch Logs
+Lưu trữ nhật ký hoạt động của Lambda, giúp kiểm tra quá trình xử lý và tìm nguyên nhân khi xảy ra lỗi.</li>
+<li>CloudWatch Metrics
+Theo dõi các chỉ số như:</li>
+</ol>
+<ul>
+<li>Lambda Errors: Số lần hàm Lambda gặp lỗi.</li>
+<li>Lambda Duration: Thời gian thực thi của Lambda.</li>
+<li>ApproximateNumberOfMessagesVisible: Số thông điệp đang chờ trong SQS.</li>
+<li>ApproximateAgeOfOldestMessage: Tuổi của thông điệp cũ nhất trong hàng đợi.</li>
+</ul>
+<ol start="3">
+<li>CloudWatch Alarms
+Cho phép thiết lập cảnh báo khi một chỉ số vượt ngưỡng mong muốn.
+Ví dụ, nếu số lượng thông điệp trong DLQ lớn hơn 0, hệ thống có thể phát cảnh báo để người quản trị kiểm tra.
+Nhờ đó, chúng ta có thể phát hiện sự cố sớm thay vì chỉ biết hệ thống gặp vấn đề khi khách hàng phản ánh.</li>
+</ol>
+<h1 id="vi-tổng-kết">VI. TỔNG KẾT</h1>
+<p>Qua việc tìm hiểu các dịch vụ trên, mình nhận thấy mỗi thành phần đều đảm nhiệm một vai trò riêng trong hệ thống xử lý đơn hàng:</p>
+<ul>
+<li>Amazon SQS: Lưu trữ và điều phối thông điệp.</li>
+<li>AWS Lambda: Thực hiện xử lý đơn hàng.</li>
+<li>Retry: Hỗ trợ thử xử lý lại khi xảy ra lỗi.</li>
+<li>Dead Letter Queue: Lưu những thông điệp thất bại nhiều lần.</li>
+<li>Idempotency: Hạn chế việc xử lý trùng lặp.</li>
+<li>Amazon CloudWatch: Theo dõi và cảnh báo tình trạng hệ thống.</li>
+</ul>
+<p>Điều mình rút ra là một hệ thống tốt không chỉ cần xử lý yêu cầu nhanh mà còn phải có khả năng kiểm soát lỗi, tránh dữ liệu trùng lặp và hỗ trợ giám sát trong quá trình vận hành.</p>
+<p>Đây cũng là một trong những lý do khiến các dịch vụ Serverless và kiến trúc Event-Driven được sử dụng rộng rãi khi xây dựng ứng dụng trên AWS.</p>
+<h1 id="nguồn-tham-khảo">NGUỒN THAM KHẢO</h1>
+<ul>
+<li>Amazon SQS <a href="https://docs.aws.amazon.com/.../SQSDeveloper.../welcome.html">https://docs.aws.amazon.com/.../SQSDeveloper.../welcome.html</a></li>
+<li>AWS Lambda with Amazon SQS <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html</a></li>
+<li>Amazon SQS Dead Letter Queues <a href="https://docs.aws.amazon.com/.../sqs-dead-letter-queues.html">https://docs.aws.amazon.com/.../sqs-dead-letter-queues.html</a></li>
+<li>Amazon CloudWatch <a href="https://docs.aws.amazon.com/.../mon.../WhatIsCloudWatch.html">https://docs.aws.amazon.com/.../mon.../WhatIsCloudWatch.html</a></li>
+</ul>
+<p>#AWS #AmazonSQS #AWSLambda #AmazonCloudWatch #Serverless #EventDrivenArchitecture #AWSStudyGroup</p>
+<p>link bài viết:</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/vi/3-blogposter/" title="3. bài viết đã đăng"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/vi/3-blogposter/blog-2/" title="BlogPost" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1795060292"></script>
+    <script src="/js/perfect-scrollbar.min.js?1795060292"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1795060292"></script>
+    <script src="/js/jquery.sticky.js?1795060292"></script>
+    <script src="/js/featherlight.min.js?1795060292"></script>
+    <script src="/js/highlight.pack.js?1795060292"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1795060292"></script>
+    <script src="/js/learn.js?1795060292"></script>
+    <script src="/js/hugo-learn.js?1795060292"></script>
+
+    <link href="/mermaid/mermaid.css?1795060292" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1795060292"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

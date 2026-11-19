@@ -1,0 +1,2347 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.168.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Thực nghiệm lỗi và tải :: Tạo mới tài khoản AWS</title>
+
+    
+    <link href="/css/nucleus.css?1795086409" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1795086409" rel="stylesheet">
+    <link href="/css/hybrid.css?1795086409" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1795086409" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1795086409" rel="stylesheet">
+    <link href="/css/auto-complete.css?1795086409" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1795086409" rel="stylesheet">
+    <link href="/css/theme.css?1795086409" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1795086409" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1795086409" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1795086409"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/vi/5-workshop/5.7-experiment/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1795086409"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1795086409"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost:1313\/\/vi";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1795086409"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/" title="Nhật ký công việc" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/">
+          <b> 1. </b> Nhật ký công việc
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.1-week1-worklog/" title="Worklog Tuần 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.1-week1-worklog/">
+           <b> 1.1. </b> Worklog Tuần 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.2-week2-worklog/" title="Worklog Tuần 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.2-week2-worklog/">
+           <b> 1.2. </b> Worklog Tuần 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.3-week3-worklog/" title="Worklog Tuần 3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.3-week3-worklog/">
+           <b> 1.3. </b> Worklog Tuần 3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.4-week4-worklog/" title="Worklog Tuần 4" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.4-week4-worklog/">
+           <b> 1.4. </b> Worklog Tuần 4
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.5-week5-worklog/" title="Worklog Tuần 5" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.5-week5-worklog/">
+           <b> 1.5. </b> Worklog Tuần 5
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.6-week6-worklog/" title="Worklog Tuần 6" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.6-week6-worklog/">
+           <b> 1.6. </b> Worklog Tuần 6
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/vi/1-worklog/1.7-week7-worklog/1.7-week7_index/" title="Worklog Tuần 7" class="dd-item ">
+        <a href="/vi/1-worklog/1.7-week7-worklog/1.7-week7_index/">
+         <b> 1.7. </b> Worklog Tuần 7
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.8-week8-worklog/" title="Worklog Tuần 8" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.8-week8-worklog/">
+           <b> 1.8. </b> Worklog Tuần 8
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.9-week9-worklog/" title="Worklog Tuần 9" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.9-week9-worklog/">
+           <b> 1.9. </b> Worklog Tuần 9
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.10-week10-worklog/" title="Worklog Tuần 10" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.10-week10-worklog/">
+           <b> 1.10. </b> Worklog Tuần 10
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.11-week11-worklog/" title="Worklog Tuần 11" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.11-week11-worklog/">
+           <b> 1.11. </b> Worklog Tuần 11
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-worklog/1.12-week12-worklog/" title="Worklog Tuần 12" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-worklog/1.12-week12-worklog/">
+           <b> 1.12. </b> Worklog Tuần 12
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-proposal/" title="Bản đề xuất" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-proposal/">
+           <b> 2. </b> Bản đề xuất
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-blogsposted/" title="3. bài viết đã đăng" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-blogsposted/">
+          3. bài viết đã đăng
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-blogsposted/blog-1/" title="BlogPost" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-blogsposted/blog-1/">
+           <b> 3.1 </b> BlogPost
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-blogsposted/blog-2/" title="BlogPost" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-blogsposted/blog-2/">
+           <b> 3.2 </b> BlogPost
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-blogsposted/blog-3/" title="BlogPost" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-blogsposted/blog-3/">
+           <b> 3.3 </b> BlogPost
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-eventparticipated/" title="Event đã tham gia" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-eventparticipated/">
+           <b> 4. </b> Event đã tham gia
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-eventparticipated/event-1/" title="4.1 Company Visit: Amazon Web Services – 14 tháng 11, 2026" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-eventparticipated/event-1/">
+          4.1 Company Visit: Amazon Web Services – 14 tháng 11, 2026
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-eventparticipated/event-2/" title="4.2 buổi setup nhỏ – 17 tháng 10, 2026" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-eventparticipated/event-2/">
+          4.2 buổi setup nhỏ – 17 tháng 10, 2026
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/" title="Workshop" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/vi/5-workshop/">
+           <b> 5. </b> Workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.1-introduction/" title="Giới thiệu và kiến trúc" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.1-introduction/">
+           <b> 5.1 </b> Giới thiệu và kiến trúc
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.2-prerequisite/" title="Chuẩn bị (IAM, region, công cụ)" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.2-prerequisite/">
+           <b> 5.2 </b> Chuẩn bị (IAM, region, công cụ)
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.3-sqs-dlq/" title="Hàng đợi và DLQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.3-sqs-dlq/">
+           <b> 5.3 </b> Hàng đợi và DLQ
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.4-idempotency/" title="Chống xử lý trùng" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.4-idempotency/">
+           <b> 5.4 </b> Chống xử lý trùng
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.5-orchestration/" title="Điều phối và thông báo" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.5-orchestration/">
+           <b> 5.5 </b> Điều phối và thông báo
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.6-monitoring/" title="Giám sát" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.6-monitoring/">
+           <b> 5.6 </b> Giám sát
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.7-experiment/" title="Thực nghiệm lỗi và tải" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/vi/5-workshop/5.7-experiment/">
+           <b> 5.7 </b> Thực nghiệm lỗi và tải
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-workshop/5.8-clean-up/" title="Clean up" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-workshop/5.8-clean-up/">
+           <b> 5.8 </b> Clean up
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-self-assessment/" title="Tự đánh giá" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/6-self-assessment/">
+           <b> 6 </b> Tự đánh giá
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-sharingandfeedback/" title="Chia sẻ, đóng góp ý kiến" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/7-sharingandfeedback/">
+           <b> 7. </b> Chia sẻ, đóng góp ý kiến
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="http://awsstudygroup.com"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="http://localhost:1313/5-workshop/5.7-experiment/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="http://localhost:1313/vi/5-workshop/5.7-experiment/" selected>Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/vi/'>Internship Report</a> > <a href='/vi/5-workshop/'>Workshop</a> > Thực nghiệm lỗi và tải
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#mục-tiêu">Mục tiêu</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#thí-nghiệm-1-độ-trễ-và-tải">Thí nghiệm 1: độ trễ và tải</a></li>
+    <li><a href="#thí-nghiệm-2-gửi-trùng-đơn">Thí nghiệm 2: gửi trùng đơn</a></li>
+    <li><a href="#thí-nghiệm-3-lỗi-và-cảnh-báo">Thí nghiệm 3: lỗi và cảnh báo</a></li>
+    <li><a href="#tổng-hợp-kết-quả-thực-nghiệm">Tổng hợp kết quả thực nghiệm</a>
+      <ul>
+        <li><a href="#kết-quả-kiểm-thử-bổ-sung">Kết quả kiểm thử bổ sung</a></li>
+        <li><a href="#phân-tích-hiệu-năng-hệ-thống">Phân tích hiệu năng hệ thống</a></li>
+        <li><a href="#nhận-xét-và-hạn-chế">Nhận xét và hạn chế</a></li>
+      </ul>
+    </li>
+    <li><a href="#đánh-giá-khả-năng-chống-trùng-và-xử-lý-lỗi">Đánh giá khả năng chống trùng và xử lý lỗi</a></li>
+    <li><a href="#đánh-giá-chi-phí">Đánh giá chi phí</a></li>
+    <li><a href="#kết-luận">Kết luận</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Thực nghiệm lỗi và tải
+            </h1>
+          
+
+        
+
+
+
+	<h2 id="mục-tiêu">Mục tiêu</h2>
+<p>So sánh hai cách xử lý đơn hàng trong cùng điều kiện:</p>
+<table>
+	<thead>
+			<tr>
+					<th></th>
+					<th>Đồng bộ (đối chứng)</th>
+					<th>Bất đồng bộ (đề xuất)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Luồng</td>
+					<td>API ghi DynamoDB rồi gửi SES ngay trong request</td>
+					<td>API chỉ đưa đơn vào SQS; Lambda và Step Functions xử lý sau</td>
+			</tr>
+			<tr>
+					<td>Chống trùng</td>
+					<td>Không</td>
+					<td>Có (DynamoDB)</td>
+			</tr>
+			<tr>
+					<td>Thử lại, DLQ, cảnh báo</td>
+					<td>Không</td>
+					<td>Có</td>
+			</tr>
+	</tbody>
+</table>
+<p>Chỉ số: phản hồi API (trung bình, p95), đơn hoàn tất, đơn thất bại hoặc mất,
+thời gian hoàn tất xử lý, số email dư khi gửi trùng, và thời gian có cảnh báo
+khi lỗi.</p>
+<blockquote>
+<p><strong>Giới hạn của SES sandbox:</strong> tối đa 1 email/giây. Email gửi đến
+<code>success@simulator.amazonses.com</code> (hộp thư giả lập của SES) không tính vào
+hạn mức 200 email/ngày nhưng vẫn bị giới hạn 1 email/giây. Vì vậy mức tải thử
+là 20 và 50 đơn. Đây cũng là một kết quả đáng ghi nhận: nút thắt nằm ở dịch
+vụ gửi email chứ không phải ở kiến trúc.</p>
+</blockquote>
+<h4 id="1-cập-nhật-templateyaml">1. Cập nhật template.yaml</h4>
+<p><em>a) Thêm tham số</em> vào phần Parameters:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">ApiKey</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">String</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">NoEcho</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">MinLength</span>: <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Description</span>: <span style="color:#ae81ff">Khoa bi mat cho header x-api-key</span>
+</span></span></code></pre></div><p><em>b) Sửa state machine.</em> Trong SendCustomerEmail, thay khối Retry để chịu
+được việc SES giới hạn tốc độ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>            <span style="color:#f92672">Retry</span>:
+</span></span><span style="display:flex;"><span>              - <span style="color:#f92672">ErrorEquals</span>: [<span style="color:#ae81ff">States.ALL]</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">IntervalSeconds</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">MaxAttempts</span>: <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">BackoffRate</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">JitterStrategy</span>: <span style="color:#ae81ff">FULL</span>
+</span></span></code></pre></div><p>Thay toàn bộ trạng thái <code>MarkDone</code> để ghi thêm thời điểm hoàn tất và đếm số
+email đã gửi:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>          <span style="color:#f92672">MarkDone</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">Task</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Resource</span>: <span style="color:#ae81ff">arn:aws:states:::dynamodb:updateItem</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Parameters</span>:
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">TableName</span>: <span style="color:#ae81ff">${TableName}</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">Key</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">orderId</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">S.$</span>: <span style="color:#ae81ff">$.orderId</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">UpdateExpression</span>: <span style="color:#e6db74">&#34;SET #s = :v, doneAt = :t ADD emailCount :one&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">ExpressionAttributeNames</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;#s&#34;</span>: <span style="color:#ae81ff">status</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">ExpressionAttributeValues</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;:v&#34;</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">S</span>: <span style="color:#ae81ff">DONE</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;:t&#34;</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">S.$</span>: <span style="color:#ae81ff">$$.State.EnteredTime</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;:one&#34;</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">N</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">End</span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><blockquote>
+<p>Với <code>MaxAttempts: 6</code> và hệ số 2, một đơn bị lỗi vĩnh viễn (ví dụ email chưa
+xác minh) sẽ mất tối đa khoảng 2 phút mới được đánh dấu <code>FAILED</code>, thay vì
+20 đến 30 giây như ở mục 5.5.</p>
+</blockquote>
+<p><em>c) Thêm hai hàm API</em> vào cuối <code>Resources</code> (trước <code>Outputs</code>:):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">SyncOrderFn</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">AWS::Serverless::Function</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Handler</span>: <span style="color:#ae81ff">sync-order.handler</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Runtime</span>: <span style="color:#ae81ff">nodejs22.x</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">CodeUri</span>: <span style="color:#ae81ff">src/</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MemorySize</span>: <span style="color:#ae81ff">256</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Timeout</span>: <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Environment</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">Variables</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">TABLE_NAME</span>: !<span style="color:#ae81ff">Ref OrdersTable</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">SENDER_EMAIL</span>: !<span style="color:#ae81ff">Ref SenderEmail</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">API_KEY</span>: !<span style="color:#ae81ff">Ref ApiKey</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Policies</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">DynamoDBCrudPolicy</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">TableName</span>: !<span style="color:#ae81ff">Ref OrdersTable</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">Statement</span>:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f92672">Effect</span>: <span style="color:#ae81ff">Allow</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">Action</span>: <span style="color:#ae81ff">ses:SendEmail</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">Resource</span>: <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Events</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">Post</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">HttpApi</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">Properties</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Path</span>: <span style="color:#ae81ff">/sync</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Method</span>: <span style="color:#ae81ff">POST</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">AsyncOrderFn</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">AWS::Serverless::Function</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Handler</span>: <span style="color:#ae81ff">async-order.handler</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Runtime</span>: <span style="color:#ae81ff">nodejs22.x</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">CodeUri</span>: <span style="color:#ae81ff">src/</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MemorySize</span>: <span style="color:#ae81ff">256</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Timeout</span>: <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Environment</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">Variables</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">QUEUE_URL</span>: !<span style="color:#ae81ff">Ref OrdersQueue</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">API_KEY</span>: !<span style="color:#ae81ff">Ref ApiKey</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Policies</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">SQSSendMessagePolicy</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">QueueName</span>: !<span style="color:#ae81ff">GetAtt OrdersQueue.QueueName</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Events</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">Post</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">HttpApi</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">Properties</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Path</span>: <span style="color:#ae81ff">/async</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Method</span>: <span style="color:#ae81ff">POST</span>
+</span></span></code></pre></div><p><em>d) Thêm đầu ra</em> vào phần <code>Outputs</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">ApiUrl</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Sub &#34;https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com&#34;</span>
+</span></span></code></pre></div><h4 id="2-viết-mã">2. Viết mã</h4>
+<p><em>src/sync-order.mjs</em> (phương án đối chứng: không thử lại, không chống trùng):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">DynamoDBClient</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/client-dynamodb&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">DynamoDBDocumentClient</span>, <span style="color:#a6e22e">UpdateCommand</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/lib-dynamodb&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">SESv2Client</span>, <span style="color:#a6e22e">SendEmailCommand</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/client-sesv2&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">db</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">DynamoDBDocumentClient</span>.<span style="color:#a6e22e">from</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DynamoDBClient</span>({}));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ses</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SESv2Client</span>({});
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ID</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/^[A-Za-z0-9_-]{1,64}$/</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">event</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">headers</span><span style="color:#f92672">?</span>.[<span style="color:#e6db74">&#34;x-api-key&#34;</span>] <span style="color:#f92672">!==</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">API_KEY</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">403</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;forbidden&#34;</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">order</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> { <span style="color:#a6e22e">order</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">body</span>); }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">catch</span> { <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;invalid json&#34;</span> }; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">order</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">orderId</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">ID</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>) <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">customerEmail</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;invalid order&#34;</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span> };
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">send</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">UpdateCommand</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">TableName</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">TABLE_NAME</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">Key</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">key</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">UpdateExpression</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;SET #s = :r, createdAt = if_not_exists(createdAt, :c)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ExpressionAttributeNames</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;#s&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;status&#34;</span> },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ExpressionAttributeValues</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;:r&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;RECEIVED&#34;</span>, <span style="color:#e6db74">&#34;:c&#34;</span><span style="color:#f92672">:</span> Date.<span style="color:#a6e22e">now</span>() },
+</span></span><span style="display:flex;"><span>    }));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">ses</span>.<span style="color:#a6e22e">send</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SendEmailCommand</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">FromEmailAddress</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">SENDER_EMAIL</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">Destination</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">ToAddresses</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">customerEmail</span>] },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">Content</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">Simple</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Subject</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">Data</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`Xac nhan don hang </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span> },
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Body</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">Text</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">Data</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`Cam on ban. Don hang </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> da duoc ghi nhan.`</span> } },
+</span></span><span style="display:flex;"><span>      } },
+</span></span><span style="display:flex;"><span>    }));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">send</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">UpdateCommand</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">TableName</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">TABLE_NAME</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">Key</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">key</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">UpdateExpression</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;SET #s = :d, doneAt = :t ADD emailCount :one&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ExpressionAttributeNames</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;#s&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;status&#34;</span> },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ExpressionAttributeValues</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;:d&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;DONE&#34;</span>, <span style="color:#e6db74">&#34;:t&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">toISOString</span>(), <span style="color:#e6db74">&#34;:one&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> },
+</span></span><span style="display:flex;"><span>    }));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;DONE&#34;</span> }) };
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Loi xu ly don&#34;</span>, <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>, <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">500</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;error&#34;</span> };
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p><em>src/async-order.mjs</em> (phương án đề xuất: nhận đơn rồi trả lời ngay):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">SQSClient</span>, <span style="color:#a6e22e">SendMessageCommand</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/client-sqs&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sqs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SQSClient</span>({});
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ID</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/^[A-Za-z0-9_-]{1,64}$/</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">event</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">headers</span><span style="color:#f92672">?</span>.[<span style="color:#e6db74">&#34;x-api-key&#34;</span>] <span style="color:#f92672">!==</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">API_KEY</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">403</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;forbidden&#34;</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">order</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> { <span style="color:#a6e22e">order</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">body</span>); }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">catch</span> { <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;invalid json&#34;</span> }; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">order</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">orderId</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">ID</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>) <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">customerEmail</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;invalid order&#34;</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">sqs</span>.<span style="color:#a6e22e">send</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SendMessageCommand</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">QueueUrl</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">QUEUE_URL</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">MessageBody</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">customerEmail</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">customerEmail</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">acceptedAt</span><span style="color:#f92672">:</span> Date.<span style="color:#a6e22e">now</span>(),
+</span></span><span style="display:flex;"><span>    }),
+</span></span><span style="display:flex;"><span>  }));
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">202</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ACCEPTED&#34;</span> }) };
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p><strong>Sửa một dòng trong <code>src/index.mjs</code></strong> để thời gian hoàn tất được tính từ lúc
+API nhận đơn:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// truoc
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">Item</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;RECEIVED&#34;</span>, <span style="color:#a6e22e">createdAt</span><span style="color:#f92672">:</span> Date.<span style="color:#a6e22e">now</span>() },
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// sau
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">Item</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;RECEIVED&#34;</span>, <span style="color:#a6e22e">createdAt</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">acceptedAt</span> <span style="color:#f92672">??</span> Date.<span style="color:#a6e22e">now</span>() },
+</span></span></code></pre></div><h4 id="3-triển-khai">3. Triển khai</h4>
+<p>Tạo một khóa bí mật và triển khai lại (lần này cần <code>--guided</code> vì có tham số mới):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>[<span style="color:#66d9ef">guid</span>]::NewGuid().ToString(<span style="color:#e6db74">&#34;N&#34;</span>)     <span style="color:#75715e"># copy chuoi nay lam ApiKey</span>
+</span></span><span style="display:flex;"><span>sam validate
+</span></span><span style="display:flex;"><span>sam build
+</span></span><span style="display:flex;"><span>sam deploy --guided
+</span></span></code></pre></div><p>Giữ nguyên các giá trị cũ, nhập <code>ApiKey</code> khi được hỏi. Lấy các biến dùng chung:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$api   = aws cloudformation describe-stacks --stack-name order-system --query <span style="color:#e6db74">&#34;Stacks[0].Outputs[?OutputKey==&#39;ApiUrl&#39;].OutputValue&#34;</span> --output text
+</span></span><span style="display:flex;"><span>$table = aws cloudformation describe-stacks --stack-name order-system --query <span style="color:#e6db74">&#34;Stacks[0].Outputs[?OutputKey==&#39;TableName&#39;].OutputValue&#34;</span> --output text
+</span></span><span style="display:flex;"><span>$sm    = aws cloudformation describe-stacks --stack-name order-system --query <span style="color:#e6db74">&#34;Stacks[0].Outputs[?OutputKey==&#39;StateMachineArn&#39;].OutputValue&#34;</span> --output text
+</span></span><span style="display:flex;"><span>$env:API_KEY = <span style="color:#e6db74">&#34;&lt;ApiKey-ban-vua-tao&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>$env:AWS_REGION = <span style="color:#e6db74">&#34;ap-southeast-1&#34;</span>
+</span></span></code></pre></div><p><img src="/images/5-Workshop/5.7-Experiments/deploy-result.png" alt="Kết quả deploy"></p>
+<blockquote>
+<p>Không đưa <code>ApiKey</code> và <code>samconfig.toml</code> lên GitHub. Hai đường API này công
+khai trên Internet (chỉ được bảo vệ bằng khóa), nên sẽ bị xóa ở mục 5.8.</p>
+</blockquote>
+<h4 id="4-chuẩn-bị-công-cụ-đo">4. Chuẩn bị công cụ đo</h4>
+<p>Trong thư mục <code>order-system</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>mkdir tools
+</span></span><span style="display:flex;"><span>cd tools
+</span></span><span style="display:flex;"><span>npm init -y
+</span></span><span style="display:flex;"><span>npm install @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb
+</span></span></code></pre></div><p><em>tools/loadtest.mjs</em> gửi N đơn với C yêu cầu đồng thời và đo thời gian phản hồi:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Cach dung: node loadtest.mjs &lt;url&gt; &lt;tien-to&gt; &lt;so-don&gt; &lt;dong-thoi&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">prefix</span>, <span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">c</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">argv</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">N</span> <span style="color:#f92672">=</span> Number(<span style="color:#a6e22e">n</span>), <span style="color:#a6e22e">C</span> <span style="color:#f92672">=</span> Number(<span style="color:#a6e22e">c</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">API_KEY</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">CUSTOMER_EMAIL</span> <span style="color:#f92672">??</span> <span style="color:#e6db74">&#34;success@simulator.amazonses.com&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">url</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">key</span>) { <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Thieu url hoac API_KEY&#34;</span>); <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">exit</span>(<span style="color:#ae81ff">1</span>); }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ok</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">fail</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">worker</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">next</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">N</span>) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">prefix</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">i</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">customerEmail</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">email</span> });
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">t0</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">performance</span>.<span style="color:#a6e22e">now</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">url</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;content-type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>, <span style="color:#e6db74">&#34;x-api-key&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">key</span> },
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">body</span>,
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">text</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">performance</span>.<span style="color:#a6e22e">now</span>() <span style="color:#f92672">-</span> <span style="color:#a6e22e">t0</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">ok</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">ok</span><span style="color:#f92672">++</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">fail</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> { <span style="color:#a6e22e">fail</span><span style="color:#f92672">++</span>; }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> Promise.<span style="color:#a6e22e">all</span>(Array.<span style="color:#a6e22e">from</span>({ <span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">C</span> }, <span style="color:#a6e22e">worker</span>));
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">avg</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">s</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">x</span>, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">/</span> <span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">NaN</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">p95</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">lat</span>[Math.<span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, Math.<span style="color:#a6e22e">ceil</span>(<span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.95</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)] <span style="color:#f92672">:</span> <span style="color:#66d9ef">NaN</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">url</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | gui=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">N</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> dong thoi=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">C</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | thanh cong=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">ok</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> loi=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fail</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | API avg=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">avg</span>.<span style="color:#a6e22e">toFixed</span>(<span style="color:#ae81ff">0</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">ms p95=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">p95</span>.<span style="color:#a6e22e">toFixed</span>(<span style="color:#ae81ff">0</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">ms`</span>);
+</span></span></code></pre></div><p><em>tools/report.mjs</em> đọc DynamoDB để tổng hợp kết quả xử lý theo tiền tố:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Cach dung: node report.mjs &lt;ten-bang&gt; &lt;tien-to&gt; &lt;so-don-da-gui&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">DynamoDBClient</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/client-dynamodb&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">DynamoDBDocumentClient</span>, <span style="color:#a6e22e">ScanCommand</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/lib-dynamodb&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">table</span>, <span style="color:#a6e22e">prefix</span>, <span style="color:#a6e22e">n</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">argv</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">db</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">DynamoDBDocumentClient</span>.<span style="color:#a6e22e">from</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DynamoDBClient</span>({}));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">send</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ScanCommand</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">TableName</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">table</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ConsistentRead</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">FilterExpression</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;begins_with(orderId, :p)&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ExpressionAttributeValues</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;:p&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">prefix</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-`</span> },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ExclusiveStartKey</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">key</span>,
+</span></span><span style="display:flex;"><span>  }));
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">push</span>(...(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">Items</span> <span style="color:#f92672">??</span> []));
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">LastEvaluatedKey</span>;
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">key</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">items</span>) <span style="color:#a6e22e">status</span>[<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">status</span>] <span style="color:#f92672">=</span> (<span style="color:#a6e22e">status</span>[<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">status</span>] <span style="color:#f92672">??</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">extra</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">i</span>) =&gt; <span style="color:#a6e22e">s</span> <span style="color:#f92672">+</span> Math.<span style="color:#a6e22e">max</span>(<span style="color:#ae81ff">0</span>, (<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">emailCount</span> <span style="color:#f92672">??</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>), <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">i</span> =&gt; <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">doneAt</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">createdAt</span>)
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">i</span> =&gt; Date.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">doneAt</span>) <span style="color:#f92672">-</span> <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">createdAt</span>).<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">avg</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">?</span> Math.<span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">s</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">x</span>, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">/</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">length</span>) <span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">p95</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">d</span>[Math.<span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, Math.<span style="color:#a6e22e">ceil</span>(<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.95</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)] <span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Tien to: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">prefix</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | gui: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">n</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | tim thay: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | mat: </span><span style="color:#e6db74">${</span>Number(<span style="color:#a6e22e">n</span>) <span style="color:#f92672">-</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Trang thai:&#34;</span>, <span style="color:#a6e22e">status</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Email du (gui trung):&#34;</span>, <span style="color:#a6e22e">extra</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Thoi gian hoan tat (ms): avg=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">avg</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> p95=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">p95</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> (so don: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74">)`</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">table</span>(<span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">i</span> =&gt; ({ <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">orderId</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">status</span>, <span style="color:#a6e22e">emailCount</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">emailCount</span> <span style="color:#f92672">??</span> <span style="color:#ae81ff">0</span> })));
+</span></span></code></pre></div><h2 id="thí-nghiệm-1-độ-trễ-và-tải">Thí nghiệm 1: độ trễ và tải</h2>
+<p>Chạy khởi động nóng (tránh tính cả thời gian khởi động lạnh của Lambda), rồi đo
+20 đơn. Giữa các lần chạy phải chờ để SES kịp &ldquo;nguội&rdquo; (giới hạn 1 email/giây):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$env:CUSTOMER_EMAIL = <span style="color:#e6db74">&#34;success@simulator.amazonses.com&#34;</span>
+</span></span><span style="display:flex;"><span>node loadtest.mjs <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/sync&#34;</span>  warm-s <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>node loadtest.mjs <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/async&#34;</span> warm-a <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>Start-Sleep -Seconds <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>node loadtest.mjs <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/sync&#34;</span> s20 <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Start-Sleep -Seconds <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span>node loadtest.mjs <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/async&#34;</span> a20 <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Start-Sleep -Seconds <span style="color:#ae81ff">120</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>node report.mjs $table s20 <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>node report.mjs $table a20 <span style="color:#ae81ff">20</span>
+</span></span></code></pre></div><p><img src="/images/5-Workshop/5.7-Experiments/loadtest-result.png" alt="Kết quả loadtest">
+<img src="/images/5-Workshop/5.7-Experiments/report-result.png" alt="Kết quả report"></p>
+<p>Lặp lại với 50 đơn (<code>s50</code>, <code>a50</code>, chờ khoảng 4 phút trước khi chạy<code> report</code>).
+Nên chạy mỗi mức tải ít nhất 3 lần và lấy trung bình.</p>
+<p><img src="/images/5-Workshop/5.7-Experiments/50.png" alt="Kết quả loadtest"></p>
+<p>Cần đọc ra:</p>
+<ul>
+<li><code>thanh cong</code> và <code>loi</code> của từng API: đường đồng bộ có bị lỗi khi SES giới hạn tốc độ không?
+-<code> Trang thai</code> trong report: bao nhiêu đơn <code>DONE</code>, <code>FAILED</code>, <code>RECEIVED</code> (bị kẹt), và bao nhiêu đơn <code>mat</code>.</li>
+<li><code>API avg/p95</code> (khách thấy) so với <code>Thoi gian hoan tat</code> (xử lý xong).</li>
+</ul>
+<h2 id="thí-nghiệm-2-gửi-trùng-đơn">Thí nghiệm 2: gửi trùng đơn</h2>
+<p>Gửi cùng một <code>orderId</code> 5 lần vào mỗi đường:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$h = @{ <span style="color:#e6db74">&#34;x-api-key&#34;</span> = $env:API_KEY }
+</span></span><span style="display:flex;"><span>$body = <span style="color:#e6db74">&#39;{&#34;orderId&#34;:&#34;dup-s&#34;,&#34;customerEmail&#34;:&#34;success@simulator.amazonses.com&#34;}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>.<span style="color:#ae81ff">.5</span> | ForEach-Object {
+</span></span><span style="display:flex;"><span>  Invoke-RestMethod -Method Post -Uri <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/sync&#34;</span> -Headers $h -ContentType <span style="color:#e6db74">&#34;application/json&#34;</span> -Body $body
+</span></span><span style="display:flex;"><span>  Start-Sleep -Seconds <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$body = <span style="color:#e6db74">&#39;{&#34;orderId&#34;:&#34;dup-a&#34;,&#34;customerEmail&#34;:&#34;success@simulator.amazonses.com&#34;}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>.<span style="color:#ae81ff">.5</span> | ForEach-Object {
+</span></span><span style="display:flex;"><span>  Invoke-RestMethod -Method Post -Uri <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/async&#34;</span> -Headers $h -ContentType <span style="color:#e6db74">&#34;application/json&#34;</span> -Body $body
+</span></span><span style="display:flex;"><span>  Start-Sleep -Seconds <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Start-Sleep -Seconds <span style="color:#ae81ff">40</span>
+</span></span><span style="display:flex;"><span>node ..\tools\report.mjs $table dup <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>(Nếu đang ở thư mục <code>tools</code> thì dùng <code>node report.mjs $table dup 2</code>.) Bảng kết
+quả cho thấy <code>emailCount</code> của từng đơn. Theo thiết kế, đường đồng bộ gửi email
+mỗi lần nhận yêu cầu, còn đường bất đồng bộ chỉ xử lý đơn đầu tiên.</p>
+<p><img src="/images/5-Workshop/5.7-Experiments/duplicate-result.png" alt="Kết quả gửi trùng"></p>
+<h2 id="thí-nghiệm-3-lỗi-và-cảnh-báo">Thí nghiệm 3: lỗi và cảnh báo</h2>
+<p>Dùng địa chỉ email chưa xác minh để SES từ chối, gửi 5 đơn mỗi đường:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$env:CUSTOMER_EMAIL = <span style="color:#e6db74">&#34;chua-xac-minh@example.com&#34;</span>
+</span></span><span style="display:flex;"><span>node loadtest.mjs <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/sync&#34;</span>  f-s <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>node loadtest.mjs <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/async&#34;</span> f-a <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>Chờ khoảng 3 phút để các execution thất bại hết các lần thử lại, rồi:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>node report.mjs $table f-s <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>node report.mjs $table f-a <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><p>Quan sát:</p>
+<ul>
+<li>Đường đồng bộ: khách nhận lỗi 500 ngay, đơn nằm lại ở <code>RECEIVED</code>, <em>không có cảnh báo nào</em> (đối chứng được cố ý để đơn giản, không có giám sát).</li>
+<li>Đường bất đồng bộ: API vẫn trả 202, đơn được đánh dấu <code>FAILED</code>, admin nhận email cảnh báo và alarm CloudWatch kích hoạt.</li>
+</ul>
+<p><em>Đo thời gian có cảnh báo.</em> Mốc của cảnh báo trực tiếp (SNS) là thời điểm
+execution kết thúc:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>aws stepfunctions list-executions --state-machine-arn $sm --status-filter FAILED --max-results <span style="color:#ae81ff">5</span> --query <span style="color:#e6db74">&#34;executions[].[name,startDate,stopDate]&#34;</span> --output table
+</span></span></code></pre></div><p>Mốc của alarm CloudWatch:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>aws cloudwatch describe-alarm-history --alarm-name order-sfn-failed --history-item-type StateUpdate --max-items <span style="color:#ae81ff">5</span> --query <span style="color:#e6db74">&#34;AlarmHistoryItems[].[Timestamp,HistorySummary]&#34;</span> --output table
+</span></span></code></pre></div><p>Lấy hiệu giữa <code>stopDate </code>và <code>Timestamp</code> để biết alarm trễ hơn cảnh báo trực tiếp
+bao lâu (chú ý hai bảng có thể hiển thị múi giờ khác nhau).</p>
+<p><em>Đo đường DLQ</em> (tin nhắn lỗi định dạng): ghi lại thời điểm gửi rồi so với
+lịch sử alarm <code> order-dlq-has-messages</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>(Get-Date).ToUniversalTime().ToString(<span style="color:#e6db74">&#34;o&#34;</span>)
+</span></span><span style="display:flex;"><span>aws sqs send-message --queue-url (aws cloudformation describe-stacks --stack-name order-system --query <span style="color:#e6db74">&#34;Stacks[0].Outputs[?OutputKey==&#39;QueueUrl&#39;].OutputValue&#34;</span> --output text) --message-body <span style="color:#e6db74">&#34;khong-phai-json&#34;</span>
+</span></span><span style="display:flex;"><span>aws cloudwatch describe-alarm-history --alarm-name order-dlq-has-messages --history-item-type StateUpdate --max-items <span style="color:#ae81ff">3</span> --query <span style="color:#e6db74">&#34;AlarmHistoryItems[].[Timestamp,HistorySummary]&#34;</span> --output table
+</span></span></code></pre></div><p><img src="/images/5-Workshop/5.7-Experiments/failed-execution.png" alt="Execution thất bại">
+<img src="/images/5-Workshop/5.7-Experiments/alarm-history.png" alt="Lịch sử alarm"></p>
+<h2 id="tổng-hợp-kết-quả-thực-nghiệm">Tổng hợp kết quả thực nghiệm</h2>
+<p>Bảng dưới đây tổng hợp kết quả kiểm thử thực tế của hai phương thức xử lý đơn hàng đồng bộ và bất đồng bộ trên AWS.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Chỉ số</th>
+					<th style="text-align: right">Đồng bộ - 20 đơn</th>
+					<th style="text-align: right">Bất đồng bộ - 20 đơn</th>
+					<th style="text-align: right">Bất đồng bộ - 50 đơn</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Số lượng xử lý đồng thời (Concurrency)</td>
+					<td style="text-align: right">5</td>
+					<td style="text-align: right">1</td>
+					<td style="text-align: right">1</td>
+			</tr>
+			<tr>
+					<td>Số yêu cầu API thành công</td>
+					<td style="text-align: right">19/20</td>
+					<td style="text-align: right">20/20</td>
+					<td style="text-align: right">50/50</td>
+			</tr>
+			<tr>
+					<td>Tỷ lệ thành công</td>
+					<td style="text-align: right">95%</td>
+					<td style="text-align: right">100%</td>
+					<td style="text-align: right">100%</td>
+			</tr>
+			<tr>
+					<td>Thời gian phản hồi API trung bình (ms)</td>
+					<td style="text-align: right">774,74</td>
+					<td style="text-align: right">135,30</td>
+					<td style="text-align: right">102,47</td>
+			</tr>
+			<tr>
+					<td>Thời gian phản hồi API P95 (ms)</td>
+					<td style="text-align: right">2.238,70</td>
+					<td style="text-align: right">245,45</td>
+					<td style="text-align: right">166,29</td>
+			</tr>
+			<tr>
+					<td>Số đơn hàng hoàn tất (DONE)</td>
+					<td style="text-align: right">19</td>
+					<td style="text-align: right">20</td>
+					<td style="text-align: right">50</td>
+			</tr>
+			<tr>
+					<td>Số đơn hàng thất bại (FAILED)</td>
+					<td style="text-align: right">Cần xác minh</td>
+					<td style="text-align: right">0</td>
+					<td style="text-align: right">0</td>
+			</tr>
+			<tr>
+					<td>Số đơn hàng không có bản ghi</td>
+					<td style="text-align: right">1</td>
+					<td style="text-align: right">0</td>
+					<td style="text-align: right">0</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="kết-quả-kiểm-thử-bổ-sung">Kết quả kiểm thử bổ sung</h3>
+<table>
+	<thead>
+			<tr>
+					<th>Chỉ số</th>
+					<th>Kết quả</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Thời gian thực thi Step Functions trung bình (20 đơn)</td>
+					<td>419,85 ms</td>
+			</tr>
+			<tr>
+					<td>Thời gian thực thi Step Functions trung bình (50 đơn)</td>
+					<td>334,70 ms</td>
+			</tr>
+			<tr>
+					<td>Kiểm thử gửi trùng đơn hàng</td>
+					<td>5 lần gửi cùng mã đơn</td>
+			</tr>
+			<tr>
+					<td>Số email SES gửi thành công</td>
+					<td>1</td>
+			</tr>
+			<tr>
+					<td>Cảnh báo CloudWatch</td>
+					<td>Kích hoạt thành công</td>
+			</tr>
+			<tr>
+					<td>Thời gian kích hoạt cảnh báo</td>
+					<td>24,61 giây</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="phân-tích-hiệu-năng-hệ-thống">Phân tích hiệu năng hệ thống</h3>
+<p>Dựa trên kết quả thực nghiệm, phương thức xử lý bất đồng bộ cho thấy ưu thế về thời gian phản hồi API so với phương thức xử lý đồng bộ.</p>
+<p>Đối với 20 đơn hàng, phương thức đồng bộ đạt tỷ lệ thành công 95%, với thời gian phản hồi API trung bình là 774,74 ms và P95 là 2.238,70 ms.</p>
+<p>Trong khi đó, phương thức bất đồng bộ đạt tỷ lệ thành công 100%, với thời gian phản hồi API trung bình là 135,30 ms và P95 là 245,45 ms.</p>
+<p>Khi tăng số lượng đơn hàng lên 50, phương thức bất đồng bộ vẫn duy trì tỷ lệ thành công 100%. Thời gian phản hồi API trung bình đạt 102,47 ms, trong khi P95 đạt 166,29 ms.</p>
+<p>Kết quả cho thấy phương thức bất đồng bộ có khả năng tiếp nhận yêu cầu nhanh và duy trì độ ổn định trong các kịch bản kiểm thử đã thực hiện.</p>
+<p>Tuy nhiên, số lượng xử lý đồng thời giữa các lần thử nghiệm không giống nhau. Vì vậy, chưa đủ cơ sở để kết luận phương thức bất đồng bộ có hiệu năng xử lý đầu cuối tốt hơn phương thức đồng bộ.</p>
+<h3 id="nhận-xét-và-hạn-chế">Nhận xét và hạn chế</h3>
+<ul>
+<li>Đối với phương thức đồng bộ với 20 đơn hàng, có 19 yêu cầu thành công và 1 yêu cầu trả về lỗi HTTP 500, không được ghi nhận trong DynamoDB.</li>
+<li>Đối với phương thức bất đồng bộ, cả hai mức tải 20 và 50 đơn hàng đều đạt tỷ lệ hoàn thành 100%.</li>
+<li>Mức độ xử lý đồng thời của phương thức đồng bộ là 5, trong khi phương thức bất đồng bộ là 1. Sự khác biệt này có thể ảnh hưởng đến kết quả so sánh hiệu năng.</li>
+<li>Thời gian phản hồi API không đồng nghĩa với thời gian hoàn tất toàn bộ quy trình xử lý đơn hàng, đặc biệt đối với kiến trúc bất đồng bộ.</li>
+<li>Cần xác minh số lượng đơn hàng FAILED của phương thức đồng bộ trong DynamoDB trước khi hoàn thiện báo cáo.</li>
+<li>Các kết quả chỉ mang tính tham khảo trong phạm vi môi trường và số lần kiểm thử đã thực hiện.</li>
+</ul>
+<h2 id="đánh-giá-khả-năng-chống-trùng-và-xử-lý-lỗi">Đánh giá khả năng chống trùng và xử lý lỗi</h2>
+<table>
+	<thead>
+			<tr>
+					<th>Kịch bản</th>
+					<th>Kết quả</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Gửi trùng cùng <code>orderId</code> 5 lần (bất đồng bộ)</td>
+					<td>Chỉ có 1 lần gửi email SES thành công, <code>emailCount</code> = 1</td>
+			</tr>
+			<tr>
+					<td>Gửi trùng 5 lần (đồng bộ)</td>
+					<td><code>emailCount</code> = &hellip; (điền số đo của bạn)</td>
+			</tr>
+			<tr>
+					<td>Đơn lỗi (email chưa xác minh)</td>
+					<td>Đơn chuyển <code>FAILED</code>, alarm CloudWatch chuyển <strong>In alarm</strong> sau khoảng <strong>24,61 giây</strong></td>
+			</tr>
+	</tbody>
+</table>
+<p>Kết quả cho thấy cơ chế chống trùng (DynamoDB và Step Functions) cùng cơ chế ghi nhận, cảnh báo lỗi hoạt động đúng thiết kế. Mốc 24,61 giây nên ghi rõ là tính từ lúc nào (ví dụ từ <code>stopDate</code> của execution thất bại đến <code>Timestamp</code> của alarm).</p>
+<h2 id="đánh-giá-chi-phí">Đánh giá chi phí</h2>
+<p>Chi phí được theo dõi bằng AWS Cost Explorer, nhóm theo dịch vụ. Tại thời điểm kiểm tra (12/11/2026), tổng chi phí hiển thị xấp xỉ <strong>0,00 USD</strong>; Lambda, Step Functions và DynamoDB chưa ghi nhận chi phí đáng kể.</p>
+<p>Cost Explorer cập nhật chậm, nên cần kiểm tra lại sau 24 đến 48 giờ để xác nhận chi phí thực tế. Khối lượng thử nghiệm nhỏ (vài chục đơn) nên chi phí dự kiến nằm trong mức miễn phí và thấp hơn ngưỡng budget 5 USD đã đặt ở mục 5.2.</p>
+<h2 id="kết-luận">Kết luận</h2>
+<p>Hệ thống xử lý đơn hàng bất đồng bộ trên AWS hoạt động ổn định trong các kịch bản đã thực hiện:</p>
+<ul>
+<li><strong>Phản hồi API:</strong> 135,30 ms (20 đơn) và 102,47 ms (50 đơn, p95 = 166,29 ms), thấp hơn phương án đồng bộ (774,74 ms).</li>
+<li><strong>Độ tin cậy:</strong> 100% đơn bất đồng bộ đạt <code>DONE</code>; phương án đồng bộ đạt 95% ở mức 20 đơn.</li>
+<li><strong>Chống trùng và giám sát:</strong> gửi trùng 5 lần chỉ xử lý 1 lần; đơn lỗi được đánh dấu <code>FAILED</code> và có cảnh báo sau khoảng 24,61 giây.</li>
+</ul>
+<p><strong>Hạn chế:</strong> mỗi mức tải chỉ chạy vài lần, hai phương án khác mức đồng thời, SES sandbox giới hạn 1 email/giây, và chi phí chưa được xác nhận cuối cùng. Do đó kết quả mang tính tham khảo. Để kết luận chắc chắn hơn về hiệu năng đầu cuối, cần chạy lại với cùng mức đồng thời và lặp nhiều lần.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/vi/5-workshop/5.6-monitoring/" title="Giám sát"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/vi/5-workshop/5.8-clean-up/" title="Clean up" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1795086409"></script>
+    <script src="/js/perfect-scrollbar.min.js?1795086409"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1795086409"></script>
+    <script src="/js/jquery.sticky.js?1795086409"></script>
+    <script src="/js/featherlight.min.js?1795086409"></script>
+    <script src="/js/highlight.pack.js?1795086409"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1795086409"></script>
+    <script src="/js/learn.js?1795086409"></script>
+    <script src="/js/hugo-learn.js?1795086409"></script>
+
+    <link href="/mermaid/mermaid.css?1795086409" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1795086409"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

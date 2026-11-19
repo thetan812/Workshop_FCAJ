@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.168.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>BlogPost :: Create a new AWS account.</title>
+
+    
+    <link href="/css/nucleus.css?1795060290" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1795060290" rel="stylesheet">
+    <link href="/css/hybrid.css?1795060290" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1795060290" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1795060290" rel="stylesheet">
+    <link href="/css/auto-complete.css?1795060290" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1795060290" rel="stylesheet">
+    <link href="/css/theme.css?1795060290" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1795060290" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1795060290" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1795060290"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/3-blogposter/blog-1/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1795060290"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1795060290"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1795060290"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/" title="Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/">
+          <b> 1. </b> Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.1-week1-worklog/" title="Week 1 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.1-week1-worklog/">
+           <b> 1.1. </b> Week 1 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.2-week2-worklog/" title="Week 2 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.2-week2-worklog/">
+           <b> 1.2. </b> Week 2 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.3-week3-worklog/" title="Week 3 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.3-week3-worklog/">
+           <b> 1.3. </b> Week 3 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.4-week4-worklog/" title="Week 4 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.4-week4-worklog/">
+           <b> 1.4. </b> Week 4 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.5-week5-worklog/" title="Week 5 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.5-week5-worklog/">
+           <b> 1.5. </b> Week 5 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.6-week6-worklog/" title="Week 6 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.6-week6-worklog/">
+           <b> 1.6. </b> Week 6 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/1-worklog/1.7-week7-worklog/1.7-week_index/" title="Week 7 Worklog" class="dd-item ">
+        <a href="/1-worklog/1.7-week7-worklog/1.7-week_index/">
+         <b> 1.7. </b> Week 7 Worklog
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.8-week8-worklog/" title="Week 8 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.8-week8-worklog/">
+           <b> 1.8. </b> Week 8 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.9-week9-worklog/" title="Week 9 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.9-week9-worklog/">
+           <b> 1.9. </b> Week 9 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.10-week10-worklog/" title="Week 10 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.10-week10-worklog/">
+           <b> 1.10. </b> Week 10 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.11-week11-worklog/" title="Week 11 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.11-week11-worklog/">
+           <b> 1.11. </b> Week 11 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.12-week12-worklog/" title="Week 12 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.12-week12-worklog/">
+           <b> 1.12. </b> Week 12 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-proposal/" title="Proposal" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-proposal/">
+           <b> 2. </b> Proposal
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-blogposter/" title="3. BlogPosted" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/3-blogposter/">
+          3. BlogPosted
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-blogposter/blog-1/" title="BlogPost" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/3-blogposter/blog-1/">
+           <b> 3.1 </b> BlogPost
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-blogposter/blog-2/" title="BlogPost" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-blogposter/blog-2/">
+           <b> 3.2 </b> BlogPost
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-blogposter/blog-3/" title="BlogPost" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-blogposter/blog-3/">
+           <b> 3.3 </b> BlogPost
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-event-participate/" title="Event Participates" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-event-participate/">
+           <b> 4. </b> Event Participates
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-event-participate/event-1/" title="4.1 Company Visit: Amazon Web Services – November 14, 2026" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-event-participate/event-1/">
+          4.1 Company Visit: Amazon Web Services – November 14, 2026
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-event-participate/event-2/" title="4.2 Mini Setup Session – October 17, 2026" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-event-participate/event-2/">
+          4.2 Mini Setup Session – October 17, 2026
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/" title="Workshop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/">
+           <b> 5. </b> Workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.1-introduction/" title="Introduction and Architecture" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.1-introduction/">
+           <b> 5.1 </b> Introduction and Architecture
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.2-prerequisite/" title="Preparation (IAM, Region, Tools)" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.2-prerequisite/">
+           <b> 5.2 </b> Preparation (IAM, Region, Tools)
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.3-sqs-dlq/" title="Queues and DLQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.3-sqs-dlq/">
+           <b> 5.3 </b> Queues and DLQ
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.4-idempotency/" title="Preventing Duplicate Processing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.4-idempotency/">
+           <b> 5.4 </b> Preventing Duplicate Processing
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.5-orchestration/" title="Orchestration and Notifications" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.5-orchestration/">
+           <b> 5.5 </b> Orchestration and Notifications
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.6-monitoring/" title="Monitoring" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.6-monitoring/">
+           <b> 5.6 </b> Monitoring
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.7-experiment/" title="Fault and Load Experiments" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.7-experiment/">
+           <b> 5.7 </b> Fault and Load Experiments
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.8-clean-up/" title="Clean up" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.8-clean-up/">
+           <b> 5.8 </b> Clean up
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/6-self-assessment/" title="Self-Assessment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6-self-assessment/">
+           <b> 6 </b> Self-Assessment
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/7-sharing-and-feedback/" title="Sharing and Feedback" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/7-sharing-and-feedback/">
+           <b> 7. </b> Sharing and Feedback
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="http://localhost:1313/3-blogposter/blog-1/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="http://localhost:1313/vi/3-blogposter/blog-1/">Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Internship Report</a> > <a href='/3-blogposter/'>3. BlogPosted</a> > BlogPost
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#building-a-resilient-order-processing-system-on-aws-with-sqs-lambda-and-cloudwatch">BUILDING A RESILIENT ORDER PROCESSING SYSTEM ON AWS WITH SQS, LAMBDA, AND CLOUDWATCH</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              BlogPost
+            </h1>
+          
+
+        
+
+
+
+	<h2 id="building-a-resilient-order-processing-system-on-aws-with-sqs-lambda-and-cloudwatch">BUILDING A RESILIENT ORDER PROCESSING SYSTEM ON AWS WITH SQS, LAMBDA, AND CLOUDWATCH</h2>
+<p>When shopping on an e-commerce website, we usually expect orders to be processed quickly and accurately. However, behind a simple checkout action, there can be many components operating simultaneously.</p>
+<p>So, what happens if the system encounters an error, such as the order processing service being interrupted or receiving too many requests at once?</p>
+<p>While exploring AWS, I found that Amazon SQS, AWS Lambda, and Amazon CloudWatch are services that can be combined to build a more flexible and fault-tolerant order processing system.</p>
+<h1 id="i-why-does-the-system-need-a-queue">I. WHY DOES THE SYSTEM NEED A QUEUE?</h1>
+<p>Imagine an online store receiving thousands of orders in a short period. If every request had to wait for the system to complete processing immediately, the server could become overloaded.</p>
+<p>To solve this problem, we can use Amazon Simple Queue Service (SQS).
+SQS is AWS&rsquo;s message queuing service, which allows messages to be stored for other components to process at an appropriate time.</p>
+<p>Some benefits of SQS:</p>
+<ul>
+<li>Helps decouple the components sending requests from the processing components.</li>
+<li>Reduces direct dependencies between services.</li>
+<li>Can retain messages when the processing system temporarily experiences issues.</li>
+<li>Supports processing requests asynchronously.
+For example: When a customer places an order, the order information is sent to SQS. Instead of having to process all the work immediately, the system can accept the order and put it in the queue for later processing.</li>
+</ul>
+<h1 id="ii-combining-sqs-with-aws-lambda">II. COMBINING SQS WITH AWS LAMBDA</h1>
+<p>If SQS is responsible for storing messages, AWS Lambda handles the execution of the processing code.
+Lambda is AWS&rsquo;s serverless computing service. Developers only need to write the processing code without having to manage servers themselves.</p>
+<p>When combining these two services, the workflow can proceed as follows:</p>
+<ul>
+<li>The customer submits an order request.</li>
+<li>The system puts the order information into SQS.</li>
+<li>AWS Lambda receives the message from the queue.</li>
+<li>Lambda performs tasks such as validating information and saving the order to the database.</li>
+<li>After successful processing, the message is deleted from the queue.
+This combination makes the system&rsquo;s task processing more flexible, especially when the volume of requests spikes.</li>
+</ul>
+<h1 id="iii-retry-and-dead-letter-queue-dlq">III. RETRY AND DEAD LETTER QUEUE (DLQ)</h1>
+<p>An important issue in distributed systems is that errors can occur at any time.</p>
+<p>For example, Lambda might fail to connect to the database or encounter an error while processing an order. In this case, the unsuccessfully processed message will not be deleted from SQS and can be received again after the Visibility Timeout expires.
+This is the Retry mechanism.</p>
+<p>However, if a message consistently fails, the system should not retry infinitely. AWS provides the Dead Letter Queue (DLQ) mechanism to address this.</p>
+<p>A DLQ is a separate queue used to store messages that have failed multiple times.
+Example:</p>
+<ul>
+<li>An order is put into SQS.</li>
+<li>Lambda receives and processes it but encounters an error.</li>
+<li>The message is retried.</li>
+<li>After exceeding the configured maximum receive count, the message is moved to the DLQ.
+Some benefits of DLQ:</li>
+<li>Prevents continuous failing messages from disrupting the overall processing flow.</li>
+<li>Helps identify requests that cannot be processed successfully.</li>
+<li>Allows investigating the cause and reprocessing messages once the issue is resolved.
+<img src="/images/blogpicture/blog1.jpg" alt="AWS"></li>
+</ul>
+<h1 id="iv-idempotency--avoiding-duplicate-order-processing">IV. IDEMPOTENCY – AVOIDING DUPLICATE ORDER PROCESSING</h1>
+<p>One interesting thing I found while researching systems using SQS and Lambda is that: a message can be processed multiple times.</p>
+<p>This can happen when Lambda has completed part of the work but fails before the message is successfully acknowledged.</p>
+<p>Without control measures, customers might end up with multiple identical orders or duplicated payment records.</p>
+<p>To mitigate this issue, we use the concept of Idempotency.
+Simply put, even if a request is sent or processed multiple times, the business outcome is not duplicated.
+Example:</p>
+<ul>
+<li>Each order has a unique identifier like ORDER_001.</li>
+<li>Before creating the order, the system checks this identifier.</li>
+<li>If the order has already been recorded, the system does not repeat the order creation action.</li>
+<li>If it does not exist, the system proceeds with the processing.</li>
+<li>DynamoDB Conditional Write can be used to control record creation conditionally, preventing two simultaneous requests from creating the same order.</li>
+</ul>
+<h1 id="v-monitoring-the-system-with-amazon-cloudwatch">V. MONITORING THE SYSTEM WITH AMAZON CLOUDWATCH</h1>
+<p>Building a system is not enough. We also need to know how the system is operating and whether it encounters errors.</p>
+<p>This is where Amazon CloudWatch comes into play.
+CloudWatch is AWS&rsquo;s monitoring service, supporting the collection and tracking of resource activity data.</p>
+<p>Some important components:</p>
+<ol>
+<li>CloudWatch Logs
+Stores Lambda activity logs, helping to inspect the processing flow and find the root cause when errors occur.</li>
+<li>CloudWatch Metrics
+Tracks metrics such as:</li>
+</ol>
+<ul>
+<li>Lambda Errors: The number of times the Lambda function encounters errors.</li>
+<li>Lambda Duration: The execution time of Lambda.</li>
+<li>ApproximateNumberOfMessagesVisible: The number of messages waiting in SQS.</li>
+<li>ApproximateAgeOfOldestMessage: The age of the oldest message in the queue.</li>
+</ul>
+<ol start="3">
+<li>CloudWatch Alarms
+Allows setting up alerts when a metric exceeds a desired threshold.
+For example, if the number of messages in the DLQ is greater than 0, the system can trigger an alert for administrators to investigate.
+As a result, we can detect issues early instead of only finding out the system has a problem when customers complain.</li>
+</ol>
+<h1 id="vi-conclusion">VI. CONCLUSION</h1>
+<p>Through researching these services, I found that each component plays a distinct role in the order processing system:</p>
+<ul>
+<li>Amazon SQS: Stores and orchestrates messages.</li>
+<li>AWS Lambda: Performs order processing.</li>
+<li>Retry: Assists in re-processing when errors occur.</li>
+<li>Dead Letter Queue: Stores messages that have failed multiple times.</li>
+<li>Idempotency: Mitigates duplicate processing.</li>
+<li>Amazon CloudWatch: Monitors and alerts on system status.</li>
+</ul>
+<p>The takeaway is that a good system doesn&rsquo;t just need to process requests quickly; it must also have the ability to control errors, avoid duplicate data, and support monitoring during operation.</p>
+<p>This is also one of the reasons why Serverless services and Event-Driven architectures are widely used when building applications on AWS.</p>
+<h1 id="references">REFERENCES</h1>
+<ul>
+<li>Amazon SQS <a href="https://docs.aws.amazon.com/.../SQSDeveloper.../welcome.html">https://docs.aws.amazon.com/.../SQSDeveloper.../welcome.html</a></li>
+<li>AWS Lambda with Amazon SQS <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html</a></li>
+<li>Amazon SQS Dead Letter Queues <a href="https://docs.aws.amazon.com/.../sqs-dead-letter-queues.html">https://docs.aws.amazon.com/.../sqs-dead-letter-queues.html</a></li>
+<li>Amazon CloudWatch <a href="https://docs.aws.amazon.com/.../mon.../WhatIsCloudWatch.html">https://docs.aws.amazon.com/.../mon.../WhatIsCloudWatch.html</a></li>
+</ul>
+<p>#AWS #AmazonSQS #AWSLambda #AmazonCloudWatch #Serverless #EventDrivenArchitecture #AWSStudyGroup</p>
+<p>Link to the blog:</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/3-blogposter/" title="3. BlogPosted"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/3-blogposter/blog-2/" title="BlogPost" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1795060290"></script>
+    <script src="/js/perfect-scrollbar.min.js?1795060290"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1795060290"></script>
+    <script src="/js/jquery.sticky.js?1795060290"></script>
+    <script src="/js/featherlight.min.js?1795060290"></script>
+    <script src="/js/highlight.pack.js?1795060290"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1795060290"></script>
+    <script src="/js/learn.js?1795060290"></script>
+    <script src="/js/hugo-learn.js?1795060290"></script>
+
+    <link href="/mermaid/mermaid.css?1795060290" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1795060290"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

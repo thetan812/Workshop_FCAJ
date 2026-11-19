@@ -1,0 +1,2351 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.168.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Fault and Load Experiments :: Create a new AWS account.</title>
+
+    
+    <link href="/css/nucleus.css?1795086408" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1795086408" rel="stylesheet">
+    <link href="/css/hybrid.css?1795086408" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1795086408" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1795086408" rel="stylesheet">
+    <link href="/css/auto-complete.css?1795086408" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1795086408" rel="stylesheet">
+    <link href="/css/theme.css?1795086408" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1795086408" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1795086408" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1795086408"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/5-workshop/5.7-experiment/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1795086408"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1795086408"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1795086408"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/" title="Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/">
+          <b> 1. </b> Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.1-week1-worklog/" title="Week 1 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.1-week1-worklog/">
+           <b> 1.1. </b> Week 1 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.2-week2-worklog/" title="Week 2 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.2-week2-worklog/">
+           <b> 1.2. </b> Week 2 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.3-week3-worklog/" title="Week 3 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.3-week3-worklog/">
+           <b> 1.3. </b> Week 3 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.4-week4-worklog/" title="Week 4 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.4-week4-worklog/">
+           <b> 1.4. </b> Week 4 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.5-week5-worklog/" title="Week 5 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.5-week5-worklog/">
+           <b> 1.5. </b> Week 5 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.6-week6-worklog/" title="Week 6 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.6-week6-worklog/">
+           <b> 1.6. </b> Week 6 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/1-worklog/1.7-week7-worklog/1.7-week_index/" title="Week 7 Worklog" class="dd-item ">
+        <a href="/1-worklog/1.7-week7-worklog/1.7-week_index/">
+         <b> 1.7. </b> Week 7 Worklog
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.8-week8-worklog/" title="Week 8 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.8-week8-worklog/">
+           <b> 1.8. </b> Week 8 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.9-week9-worklog/" title="Week 9 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.9-week9-worklog/">
+           <b> 1.9. </b> Week 9 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.10-week10-worklog/" title="Week 10 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.10-week10-worklog/">
+           <b> 1.10. </b> Week 10 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.11-week11-worklog/" title="Week 11 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.11-week11-worklog/">
+           <b> 1.11. </b> Week 11 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.12-week12-worklog/" title="Week 12 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.12-week12-worklog/">
+           <b> 1.12. </b> Week 12 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-proposal/" title="Proposal" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-proposal/">
+           <b> 2. </b> Proposal
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-blogsposted/" title="3. BlogPosted" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-blogsposted/">
+          3. BlogPosted
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-blogsposted/blog-1/" title="BlogPost" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-blogsposted/blog-1/">
+           <b> 3.1 </b> BlogPost
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-blogsposted/blog-2/" title="BlogPost" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-blogsposted/blog-2/">
+           <b> 3.2 </b> BlogPost
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-blogsposted/blog-3/" title="BlogPost" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-blogsposted/blog-3/">
+           <b> 3.3 </b> BlogPost
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-eventparticipated/" title="Event Participates" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-eventparticipated/">
+           <b> 4. </b> Event Participates
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-eventparticipated/event-1/" title="4.1 Company Visit: Amazon Web Services – November 14, 2026" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-eventparticipated/event-1/">
+          4.1 Company Visit: Amazon Web Services – November 14, 2026
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-eventparticipated/event-2/" title="4.2 Mini Setup Session – October 17, 2026" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-eventparticipated/event-2/">
+          4.2 Mini Setup Session – October 17, 2026
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/" title="Workshop" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/5-workshop/">
+           <b> 5. </b> Workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.1-introduction/" title="Introduction and Architecture" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.1-introduction/">
+           <b> 5.1 </b> Introduction and Architecture
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.2-prerequisite/" title="Preparation (IAM, Region, Tools)" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.2-prerequisite/">
+           <b> 5.2 </b> Preparation (IAM, Region, Tools)
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.3-sqs-dlq/" title="Queues and DLQ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.3-sqs-dlq/">
+           <b> 5.3 </b> Queues and DLQ
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.4-idempotency/" title="Preventing Duplicate Processing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.4-idempotency/">
+           <b> 5.4 </b> Preventing Duplicate Processing
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.5-orchestration/" title="Orchestration and Notifications" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.5-orchestration/">
+           <b> 5.5 </b> Orchestration and Notifications
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.6-monitoring/" title="Monitoring" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.6-monitoring/">
+           <b> 5.6 </b> Monitoring
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.7-experiment/" title="Fault and Load Experiments" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/5-workshop/5.7-experiment/">
+           <b> 5.7 </b> Fault and Load Experiments
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-workshop/5.8-clean-up/" title="Clean up" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-workshop/5.8-clean-up/">
+           <b> 5.8 </b> Clean up
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/6-self-assessment/" title="Self-Assessment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6-self-assessment/">
+           <b> 6 </b> Self-Assessment
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/7-sharingandfeedback/" title="Sharing and Feedback" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/7-sharingandfeedback/">
+           <b> 7. </b> Sharing and Feedback
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="http://localhost:1313/5-workshop/5.7-experiment/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="http://localhost:1313/vi/5-workshop/5.7-experiment/">Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Internship Report</a> > <a href='/5-workshop/'>Workshop</a> > Fault and Load Experiments
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#objective">Objective</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#experiment-1-latency-and-load">Experiment 1: latency and load</a></li>
+    <li><a href="#experiment-2-duplicate-orders">Experiment 2: duplicate orders</a></li>
+    <li><a href="#experiment-3-failures-and-alerts">Experiment 3: failures and alerts</a></li>
+    <li><a href="#summary-of-experimental-results">Summary of Experimental Results</a>
+      <ul>
+        <li><a href="#additional-test-results">Additional Test Results</a></li>
+        <li><a href="#performance-analysis">Performance Analysis</a></li>
+        <li><a href="#observations-and-limitations">Observations and Limitations</a></li>
+      </ul>
+    </li>
+    <li><a href="#evaluation-of-duplicate-prevention-and-failure-handling">Evaluation of Duplicate Prevention and Failure Handling</a></li>
+    <li><a href="#cost-evaluation">Cost Evaluation</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Fault and Load Experiments
+            </h1>
+          
+
+        
+
+
+
+	<h2 id="objective">Objective</h2>
+<p>Compare two ways of processing orders under the same conditions:</p>
+<table>
+	<thead>
+			<tr>
+					<th></th>
+					<th>Synchronous (baseline)</th>
+					<th>Asynchronous (proposed)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Flow</td>
+					<td>The API writes to DynamoDB and then sends via SES within the request</td>
+					<td>The API only puts the order into SQS; Lambda and Step Functions process it later</td>
+			</tr>
+			<tr>
+					<td>Duplicate protection</td>
+					<td>No</td>
+					<td>Yes (DynamoDB)</td>
+			</tr>
+			<tr>
+					<td>Retry, DLQ, alerts</td>
+					<td>No</td>
+					<td>Yes</td>
+			</tr>
+	</tbody>
+</table>
+<p>Metrics: API response time (average, p95), completed orders, failed or lost
+orders, processing completion time, extra emails when duplicates are sent, and
+the time until an alert is raised on failure.</p>
+<blockquote>
+<p><strong>SES sandbox limit:</strong> at most 1 email/second. Emails sent to
+<code>success@simulator.amazonses.com</code> (the SES mailbox simulator) do not count
+toward the 200 emails/day quota but are still limited to 1 email/second. That
+is why the test loads are 20 and 50 orders. This is also a result worth
+recording: the bottleneck is the email-sending service, not the architecture.</p>
+</blockquote>
+<h4 id="1-update-templateyaml">1. Update template.yaml</h4>
+<p><em>a) Add a parameter</em> to the Parameters section:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">ApiKey</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">String</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">NoEcho</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">MinLength</span>: <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Description</span>: <span style="color:#ae81ff">Secret key for the x-api-key header</span>
+</span></span></code></pre></div><p><em>b) Modify the state machine.</em> In SendCustomerEmail, replace the Retry block so
+it can tolerate SES rate limiting:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>            <span style="color:#f92672">Retry</span>:
+</span></span><span style="display:flex;"><span>              - <span style="color:#f92672">ErrorEquals</span>: [<span style="color:#ae81ff">States.ALL]</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">IntervalSeconds</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">MaxAttempts</span>: <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">BackoffRate</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">JitterStrategy</span>: <span style="color:#ae81ff">FULL</span>
+</span></span></code></pre></div><p>Replace the entire <code>MarkDone</code> state so it also records the completion time and
+counts the emails sent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>          <span style="color:#f92672">MarkDone</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">Task</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Resource</span>: <span style="color:#ae81ff">arn:aws:states:::dynamodb:updateItem</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Parameters</span>:
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">TableName</span>: <span style="color:#ae81ff">${TableName}</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">Key</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">orderId</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">S.$</span>: <span style="color:#ae81ff">$.orderId</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">UpdateExpression</span>: <span style="color:#e6db74">&#34;SET #s = :v, doneAt = :t ADD emailCount :one&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">ExpressionAttributeNames</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;#s&#34;</span>: <span style="color:#ae81ff">status</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">ExpressionAttributeValues</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;:v&#34;</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">S</span>: <span style="color:#ae81ff">DONE</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;:t&#34;</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">S.$</span>: <span style="color:#ae81ff">$$.State.EnteredTime</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;:one&#34;</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">N</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">End</span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><blockquote>
+<p>With <code>MaxAttempts: 6</code> and a backoff rate of 2, an order with a permanent error
+(for example an unverified email) takes up to about 2 minutes to be marked
+<code>FAILED</code>, instead of the 20 to 30 seconds seen in section 5.5.</p>
+</blockquote>
+<p><em>c) Add two API functions</em> at the end of <code>Resources</code> (before <code>Outputs</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">SyncOrderFn</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">AWS::Serverless::Function</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Handler</span>: <span style="color:#ae81ff">sync-order.handler</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Runtime</span>: <span style="color:#ae81ff">nodejs22.x</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">CodeUri</span>: <span style="color:#ae81ff">src/</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MemorySize</span>: <span style="color:#ae81ff">256</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Timeout</span>: <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Environment</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">Variables</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">TABLE_NAME</span>: !<span style="color:#ae81ff">Ref OrdersTable</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">SENDER_EMAIL</span>: !<span style="color:#ae81ff">Ref SenderEmail</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">API_KEY</span>: !<span style="color:#ae81ff">Ref ApiKey</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Policies</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">DynamoDBCrudPolicy</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">TableName</span>: !<span style="color:#ae81ff">Ref OrdersTable</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">Statement</span>:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f92672">Effect</span>: <span style="color:#ae81ff">Allow</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">Action</span>: <span style="color:#ae81ff">ses:SendEmail</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">Resource</span>: <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Events</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">Post</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">HttpApi</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">Properties</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Path</span>: <span style="color:#ae81ff">/sync</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Method</span>: <span style="color:#ae81ff">POST</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">AsyncOrderFn</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">AWS::Serverless::Function</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Handler</span>: <span style="color:#ae81ff">async-order.handler</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Runtime</span>: <span style="color:#ae81ff">nodejs22.x</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">CodeUri</span>: <span style="color:#ae81ff">src/</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MemorySize</span>: <span style="color:#ae81ff">256</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Timeout</span>: <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Environment</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">Variables</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">QUEUE_URL</span>: !<span style="color:#ae81ff">Ref OrdersQueue</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">API_KEY</span>: !<span style="color:#ae81ff">Ref ApiKey</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Policies</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">SQSSendMessagePolicy</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">QueueName</span>: !<span style="color:#ae81ff">GetAtt OrdersQueue.QueueName</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Events</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">Post</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">HttpApi</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">Properties</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Path</span>: <span style="color:#ae81ff">/async</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">Method</span>: <span style="color:#ae81ff">POST</span>
+</span></span></code></pre></div><p><em>d) Add an output</em> to the <code>Outputs</code> section:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">ApiUrl</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Sub &#34;https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com&#34;</span>
+</span></span></code></pre></div><h4 id="2-write-the-code">2. Write the code</h4>
+<p><em>src/sync-order.mjs</em> (the baseline: no retries, no duplicate protection):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">DynamoDBClient</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/client-dynamodb&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">DynamoDBDocumentClient</span>, <span style="color:#a6e22e">UpdateCommand</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/lib-dynamodb&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">SESv2Client</span>, <span style="color:#a6e22e">SendEmailCommand</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/client-sesv2&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">db</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">DynamoDBDocumentClient</span>.<span style="color:#a6e22e">from</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DynamoDBClient</span>({}));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ses</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SESv2Client</span>({});
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ID</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/^[A-Za-z0-9_-]{1,64}$/</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">event</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">headers</span><span style="color:#f92672">?</span>.[<span style="color:#e6db74">&#34;x-api-key&#34;</span>] <span style="color:#f92672">!==</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">API_KEY</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">403</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;forbidden&#34;</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">order</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> { <span style="color:#a6e22e">order</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">body</span>); }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">catch</span> { <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;invalid json&#34;</span> }; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">order</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">orderId</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">ID</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>) <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">customerEmail</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;invalid order&#34;</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span> };
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">send</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">UpdateCommand</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">TableName</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">TABLE_NAME</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">Key</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">key</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">UpdateExpression</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;SET #s = :r, createdAt = if_not_exists(createdAt, :c)&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ExpressionAttributeNames</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;#s&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;status&#34;</span> },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ExpressionAttributeValues</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;:r&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;RECEIVED&#34;</span>, <span style="color:#e6db74">&#34;:c&#34;</span><span style="color:#f92672">:</span> Date.<span style="color:#a6e22e">now</span>() },
+</span></span><span style="display:flex;"><span>    }));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">ses</span>.<span style="color:#a6e22e">send</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SendEmailCommand</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">FromEmailAddress</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">SENDER_EMAIL</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">Destination</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">ToAddresses</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">customerEmail</span>] },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">Content</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">Simple</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Subject</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">Data</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`Order confirmation </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span> },
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Body</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">Text</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">Data</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`Thank you. Your order </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> has been received.`</span> } },
+</span></span><span style="display:flex;"><span>      } },
+</span></span><span style="display:flex;"><span>    }));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">send</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">UpdateCommand</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">TableName</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">TABLE_NAME</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">Key</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">key</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">UpdateExpression</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;SET #s = :d, doneAt = :t ADD emailCount :one&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ExpressionAttributeNames</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;#s&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;status&#34;</span> },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ExpressionAttributeValues</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;:d&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;DONE&#34;</span>, <span style="color:#e6db74">&#34;:t&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">toISOString</span>(), <span style="color:#e6db74">&#34;:one&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> },
+</span></span><span style="display:flex;"><span>    }));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;DONE&#34;</span> }) };
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Error processing order&#34;</span>, <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>, <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">500</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;error&#34;</span> };
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p><em>src/async-order.mjs</em> (the proposed approach: accept the order and reply immediately):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">SQSClient</span>, <span style="color:#a6e22e">SendMessageCommand</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/client-sqs&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sqs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SQSClient</span>({});
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ID</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/^[A-Za-z0-9_-]{1,64}$/</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">event</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">headers</span><span style="color:#f92672">?</span>.[<span style="color:#e6db74">&#34;x-api-key&#34;</span>] <span style="color:#f92672">!==</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">API_KEY</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">403</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;forbidden&#34;</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">order</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> { <span style="color:#a6e22e">order</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">body</span>); }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">catch</span> { <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;invalid json&#34;</span> }; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">order</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">orderId</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">ID</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>) <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">customerEmail</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;invalid order&#34;</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">sqs</span>.<span style="color:#a6e22e">send</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SendMessageCommand</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">QueueUrl</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">QUEUE_URL</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">MessageBody</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">customerEmail</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">customerEmail</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">acceptedAt</span><span style="color:#f92672">:</span> Date.<span style="color:#a6e22e">now</span>(),
+</span></span><span style="display:flex;"><span>    }),
+</span></span><span style="display:flex;"><span>  }));
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">202</span>, <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ACCEPTED&#34;</span> }) };
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p><strong>Change one line in <code>src/index.mjs</code></strong> so the completion time is measured from
+the moment the API accepts the order:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// before
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">Item</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;RECEIVED&#34;</span>, <span style="color:#a6e22e">createdAt</span><span style="color:#f92672">:</span> Date.<span style="color:#a6e22e">now</span>() },
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// after
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">Item</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">orderId</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;RECEIVED&#34;</span>, <span style="color:#a6e22e">createdAt</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">acceptedAt</span> <span style="color:#f92672">??</span> Date.<span style="color:#a6e22e">now</span>() },
+</span></span></code></pre></div><h4 id="3-deploy">3. Deploy</h4>
+<p>Generate a secret key and redeploy (this time you need <code>--guided</code> because there
+is a new parameter):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>[<span style="color:#66d9ef">guid</span>]::NewGuid().ToString(<span style="color:#e6db74">&#34;N&#34;</span>)     <span style="color:#75715e"># copy this string to use as ApiKey</span>
+</span></span><span style="display:flex;"><span>sam validate
+</span></span><span style="display:flex;"><span>sam build
+</span></span><span style="display:flex;"><span>sam deploy --guided
+</span></span></code></pre></div><p>Keep the previous values and enter <code>ApiKey</code> when asked. Get the shared variables:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$api   = aws cloudformation describe-stacks --stack-name order-system --query <span style="color:#e6db74">&#34;Stacks[0].Outputs[?OutputKey==&#39;ApiUrl&#39;].OutputValue&#34;</span> --output text
+</span></span><span style="display:flex;"><span>$table = aws cloudformation describe-stacks --stack-name order-system --query <span style="color:#e6db74">&#34;Stacks[0].Outputs[?OutputKey==&#39;TableName&#39;].OutputValue&#34;</span> --output text
+</span></span><span style="display:flex;"><span>$sm    = aws cloudformation describe-stacks --stack-name order-system --query <span style="color:#e6db74">&#34;Stacks[0].Outputs[?OutputKey==&#39;StateMachineArn&#39;].OutputValue&#34;</span> --output text
+</span></span><span style="display:flex;"><span>$env:API_KEY = <span style="color:#e6db74">&#34;&lt;the-ApiKey-you-just-created&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>$env:AWS_REGION = <span style="color:#e6db74">&#34;ap-southeast-1&#34;</span>
+</span></span></code></pre></div><p><img src="/images/5-Workshop/5.7-Experiments/deploy-result.png" alt="Deploy result"></p>
+<blockquote>
+<p>Do not push <code>ApiKey</code> or <code>samconfig.toml</code> to GitHub. These two API endpoints are
+public on the Internet (protected only by a key), so they will be deleted in
+section 5.8.</p>
+</blockquote>
+<h4 id="4-prepare-the-measurement-tools">4. Prepare the measurement tools</h4>
+<p>In the <code>order-system</code> directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>mkdir tools
+</span></span><span style="display:flex;"><span>cd tools
+</span></span><span style="display:flex;"><span>npm init -y
+</span></span><span style="display:flex;"><span>npm install @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb
+</span></span></code></pre></div><p><em>tools/loadtest.mjs</em> sends N orders with C concurrent requests and measures the response time:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Usage: node loadtest.mjs &lt;url&gt; &lt;prefix&gt; &lt;orders&gt; &lt;concurrency&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">prefix</span>, <span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">c</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">argv</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">N</span> <span style="color:#f92672">=</span> Number(<span style="color:#a6e22e">n</span>), <span style="color:#a6e22e">C</span> <span style="color:#f92672">=</span> Number(<span style="color:#a6e22e">c</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">API_KEY</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">CUSTOMER_EMAIL</span> <span style="color:#f92672">??</span> <span style="color:#e6db74">&#34;success@simulator.amazonses.com&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">url</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">key</span>) { <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Missing url or API_KEY&#34;</span>); <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">exit</span>(<span style="color:#ae81ff">1</span>); }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ok</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">fail</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">worker</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">next</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">N</span>) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">prefix</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">i</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">customerEmail</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">email</span> });
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">t0</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">performance</span>.<span style="color:#a6e22e">now</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">url</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;content-type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>, <span style="color:#e6db74">&#34;x-api-key&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">key</span> },
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">body</span>,
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">text</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">performance</span>.<span style="color:#a6e22e">now</span>() <span style="color:#f92672">-</span> <span style="color:#a6e22e">t0</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">ok</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">ok</span><span style="color:#f92672">++</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">fail</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> { <span style="color:#a6e22e">fail</span><span style="color:#f92672">++</span>; }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> Promise.<span style="color:#a6e22e">all</span>(Array.<span style="color:#a6e22e">from</span>({ <span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">C</span> }, <span style="color:#a6e22e">worker</span>));
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">avg</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">s</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">x</span>, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">/</span> <span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">NaN</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">p95</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">lat</span>[Math.<span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, Math.<span style="color:#a6e22e">ceil</span>(<span style="color:#a6e22e">lat</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.95</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)] <span style="color:#f92672">:</span> <span style="color:#66d9ef">NaN</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">url</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | sent=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">N</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> concurrency=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">C</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | success=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">ok</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> errors=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fail</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | API avg=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">avg</span>.<span style="color:#a6e22e">toFixed</span>(<span style="color:#ae81ff">0</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">ms p95=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">p95</span>.<span style="color:#a6e22e">toFixed</span>(<span style="color:#ae81ff">0</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">ms`</span>);
+</span></span></code></pre></div><p><em>tools/report.mjs</em> reads DynamoDB to summarize the processing results by prefix:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Usage: node report.mjs &lt;table-name&gt; &lt;prefix&gt; &lt;orders-sent&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">DynamoDBClient</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/client-dynamodb&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">DynamoDBDocumentClient</span>, <span style="color:#a6e22e">ScanCommand</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/lib-dynamodb&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">table</span>, <span style="color:#a6e22e">prefix</span>, <span style="color:#a6e22e">n</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">argv</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">db</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">DynamoDBDocumentClient</span>.<span style="color:#a6e22e">from</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DynamoDBClient</span>({}));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">send</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ScanCommand</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">TableName</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">table</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ConsistentRead</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">FilterExpression</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;begins_with(orderId, :p)&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ExpressionAttributeValues</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;:p&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">prefix</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-`</span> },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ExclusiveStartKey</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">key</span>,
+</span></span><span style="display:flex;"><span>  }));
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">push</span>(...(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">Items</span> <span style="color:#f92672">??</span> []));
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">LastEvaluatedKey</span>;
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">key</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">items</span>) <span style="color:#a6e22e">status</span>[<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">status</span>] <span style="color:#f92672">=</span> (<span style="color:#a6e22e">status</span>[<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">status</span>] <span style="color:#f92672">??</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">extra</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">i</span>) =&gt; <span style="color:#a6e22e">s</span> <span style="color:#f92672">+</span> Math.<span style="color:#a6e22e">max</span>(<span style="color:#ae81ff">0</span>, (<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">emailCount</span> <span style="color:#f92672">??</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>), <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">i</span> =&gt; <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">doneAt</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">createdAt</span>)
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">i</span> =&gt; Date.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">doneAt</span>) <span style="color:#f92672">-</span> <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">createdAt</span>).<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">avg</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">?</span> Math.<span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">s</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">x</span>, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">/</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">length</span>) <span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">p95</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">d</span>[Math.<span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, Math.<span style="color:#a6e22e">ceil</span>(<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.95</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)] <span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Prefix: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">prefix</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | sent: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">n</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | found: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | lost: </span><span style="color:#e6db74">${</span>Number(<span style="color:#a6e22e">n</span>) <span style="color:#f92672">-</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Status:&#34;</span>, <span style="color:#a6e22e">status</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Extra emails (duplicates):&#34;</span>, <span style="color:#a6e22e">extra</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Completion time (ms): avg=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">avg</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> p95=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">p95</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> (orders: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74">)`</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">table</span>(<span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">i</span> =&gt; ({ <span style="color:#a6e22e">orderId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">orderId</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">status</span>, <span style="color:#a6e22e">emailCount</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">emailCount</span> <span style="color:#f92672">??</span> <span style="color:#ae81ff">0</span> })));
+</span></span></code></pre></div><h2 id="experiment-1-latency-and-load">Experiment 1: latency and load</h2>
+<p>Run a warm-up first (so Lambda cold starts are not counted), then measure
+20 orders. Wait between runs so SES can &ldquo;cool down&rdquo; (limit of 1 email/second):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$env:CUSTOMER_EMAIL = <span style="color:#e6db74">&#34;success@simulator.amazonses.com&#34;</span>
+</span></span><span style="display:flex;"><span>node loadtest.mjs <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/sync&#34;</span>  warm-s <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>node loadtest.mjs <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/async&#34;</span> warm-a <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>Start-Sleep -Seconds <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>node loadtest.mjs <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/sync&#34;</span> s20 <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Start-Sleep -Seconds <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span>node loadtest.mjs <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/async&#34;</span> a20 <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Start-Sleep -Seconds <span style="color:#ae81ff">120</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>node report.mjs $table s20 <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>node report.mjs $table a20 <span style="color:#ae81ff">20</span>
+</span></span></code></pre></div><p><img src="/images/5-Workshop/5.7-Experiments/loadtest-result.png" alt="Loadtest result"></p>
+<p><img src="/images/5-Workshop/5.7-Experiments/report-result.png" alt="Report result"></p>
+<p>Repeat with 50 orders (<code>s50</code>, <code>a50</code>, wait about 4 minutes before running <code>report</code>).
+Run each load level at least 3 times and take the average.</p>
+<p><img src="/images/5-Workshop/5.7-Experiments/50.png" alt="loadtest result"></p>
+<p>What to read from the output:</p>
+<ul>
+<li><code>success</code> and <code>errors</code> for each API: does the synchronous path fail when SES rate-limits?</li>
+<li><code>Status</code> in the report: how many orders are <code>DONE</code>, <code>FAILED</code>, <code>RECEIVED</code> (stuck), and how many are <code>lost</code>.</li>
+<li><code>API avg/p95</code> (what the customer sees) versus <code>Completion time</code> (when processing finishes).</li>
+</ul>
+<h2 id="experiment-2-duplicate-orders">Experiment 2: duplicate orders</h2>
+<p>Send the same <code>orderId</code> 5 times to each path:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$h = @{ <span style="color:#e6db74">&#34;x-api-key&#34;</span> = $env:API_KEY }
+</span></span><span style="display:flex;"><span>$body = <span style="color:#e6db74">&#39;{&#34;orderId&#34;:&#34;dup-s&#34;,&#34;customerEmail&#34;:&#34;success@simulator.amazonses.com&#34;}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>.<span style="color:#ae81ff">.5</span> | ForEach-Object {
+</span></span><span style="display:flex;"><span>  Invoke-RestMethod -Method Post -Uri <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/sync&#34;</span> -Headers $h -ContentType <span style="color:#e6db74">&#34;application/json&#34;</span> -Body $body
+</span></span><span style="display:flex;"><span>  Start-Sleep -Seconds <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$body = <span style="color:#e6db74">&#39;{&#34;orderId&#34;:&#34;dup-a&#34;,&#34;customerEmail&#34;:&#34;success@simulator.amazonses.com&#34;}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>.<span style="color:#ae81ff">.5</span> | ForEach-Object {
+</span></span><span style="display:flex;"><span>  Invoke-RestMethod -Method Post -Uri <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/async&#34;</span> -Headers $h -ContentType <span style="color:#e6db74">&#34;application/json&#34;</span> -Body $body
+</span></span><span style="display:flex;"><span>  Start-Sleep -Seconds <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Start-Sleep -Seconds <span style="color:#ae81ff">40</span>
+</span></span><span style="display:flex;"><span>node ..\tools\report.mjs $table dup <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>(If you are already in the <code>tools</code> directory, use <code>node report.mjs $table dup 2</code>.)
+The result table shows the <code>emailCount</code> of each order. By design, the
+synchronous path sends an email every time it receives a request, while the
+asynchronous path only processes the first order.</p>
+<p><img src="/images/5-Workshop/5.7-Experiments/duplicate-result.png" alt="Duplicate result"></p>
+<h2 id="experiment-3-failures-and-alerts">Experiment 3: failures and alerts</h2>
+<p>Use an unverified email address so SES rejects it, and send 5 orders to each path:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$env:CUSTOMER_EMAIL = <span style="color:#e6db74">&#34;unverified@example.com&#34;</span>
+</span></span><span style="display:flex;"><span>node loadtest.mjs <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/sync&#34;</span>  f-s <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>node loadtest.mjs <span style="color:#e6db74">&#34;</span>$api<span style="color:#e6db74">/async&#34;</span> f-a <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>Wait about 3 minutes for the executions to exhaust their retries and fail, then:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>node report.mjs $table f-s <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>node report.mjs $table f-a <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><p>Observe:</p>
+<ul>
+<li>Synchronous path: the customer gets a 500 error immediately, the order stays in <code>RECEIVED</code>, and <em>no alert is raised</em> (the baseline is intentionally kept simple, with no monitoring).</li>
+<li>Asynchronous path: the API still returns 202, the order is marked <code>FAILED</code>, the admin receives an alert email, and the CloudWatch alarm fires.</li>
+</ul>
+<p><em>Measure the time to alert.</em> The timestamp of the direct alert (SNS) is the
+moment the execution ends:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>aws stepfunctions list-executions --state-machine-arn $sm --status-filter FAILED --max-results <span style="color:#ae81ff">5</span> --query <span style="color:#e6db74">&#34;executions[].[name,startDate,stopDate]&#34;</span> --output table
+</span></span></code></pre></div><p>The timestamp of the CloudWatch alarm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>aws cloudwatch describe-alarm-history --alarm-name order-sfn-failed --history-item-type StateUpdate --max-items <span style="color:#ae81ff">5</span> --query <span style="color:#e6db74">&#34;AlarmHistoryItems[].[Timestamp,HistorySummary]&#34;</span> --output table
+</span></span></code></pre></div><p>Take the difference between <code>stopDate</code> and <code>Timestamp</code> to see how much later the
+alarm fires than the direct alert (note that the two tables may display
+different time zones).</p>
+<p><em>Measure the DLQ path</em> (malformed messages): record the time of sending, then
+compare it with the history of the <code>order-dlq-has-messages</code> alarm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>(Get-Date).ToUniversalTime().ToString(<span style="color:#e6db74">&#34;o&#34;</span>)
+</span></span><span style="display:flex;"><span>aws sqs send-message --queue-url (aws cloudformation describe-stacks --stack-name order-system --query <span style="color:#e6db74">&#34;Stacks[0].Outputs[?OutputKey==&#39;QueueUrl&#39;].OutputValue&#34;</span> --output text) --message-body <span style="color:#e6db74">&#34;not-json&#34;</span>
+</span></span><span style="display:flex;"><span>aws cloudwatch describe-alarm-history --alarm-name order-dlq-has-messages --history-item-type StateUpdate --max-items <span style="color:#ae81ff">3</span> --query <span style="color:#e6db74">&#34;AlarmHistoryItems[].[Timestamp,HistorySummary]&#34;</span> --output table
+</span></span></code></pre></div><p><img src="/images/5-Workshop/5.7-Experiments/failed-execution.png" alt="Failed execution">
+<img src="/images/5-Workshop/5.7-Experiments/alarm-history.png" alt="Alarm history"></p>
+<h2 id="summary-of-experimental-results">Summary of Experimental Results</h2>
+<p>The table below summarizes the actual test results of the synchronous and asynchronous order processing approaches on AWS.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Metric</th>
+					<th style="text-align: right">Synchronous - 20 orders</th>
+					<th style="text-align: right">Asynchronous - 20 orders</th>
+					<th style="text-align: right">Asynchronous - 50 orders</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Concurrency</td>
+					<td style="text-align: right">5</td>
+					<td style="text-align: right">1</td>
+					<td style="text-align: right">1</td>
+			</tr>
+			<tr>
+					<td>Successful API requests</td>
+					<td style="text-align: right">19/20</td>
+					<td style="text-align: right">20/20</td>
+					<td style="text-align: right">50/50</td>
+			</tr>
+			<tr>
+					<td>Success rate</td>
+					<td style="text-align: right">95%</td>
+					<td style="text-align: right">100%</td>
+					<td style="text-align: right">100%</td>
+			</tr>
+			<tr>
+					<td>Average API response time (ms)</td>
+					<td style="text-align: right">774.74</td>
+					<td style="text-align: right">135.30</td>
+					<td style="text-align: right">102.47</td>
+			</tr>
+			<tr>
+					<td>P95 API response time (ms)</td>
+					<td style="text-align: right">2,238.70</td>
+					<td style="text-align: right">245.45</td>
+					<td style="text-align: right">166.29</td>
+			</tr>
+			<tr>
+					<td>Completed orders (DONE)</td>
+					<td style="text-align: right">19</td>
+					<td style="text-align: right">20</td>
+					<td style="text-align: right">50</td>
+			</tr>
+			<tr>
+					<td>Failed orders (FAILED)</td>
+					<td style="text-align: right">To be verified</td>
+					<td style="text-align: right">0</td>
+					<td style="text-align: right">0</td>
+			</tr>
+			<tr>
+					<td>Orders with no record</td>
+					<td style="text-align: right">1</td>
+					<td style="text-align: right">0</td>
+					<td style="text-align: right">0</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="additional-test-results">Additional Test Results</h3>
+<table>
+	<thead>
+			<tr>
+					<th>Metric</th>
+					<th>Result</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Average Step Functions execution time (20 orders)</td>
+					<td>419.85 ms</td>
+			</tr>
+			<tr>
+					<td>Average Step Functions execution time (50 orders)</td>
+					<td>334.70 ms</td>
+			</tr>
+			<tr>
+					<td>Duplicate order test</td>
+					<td>Same order ID submitted 5 times</td>
+			</tr>
+			<tr>
+					<td>Emails successfully sent via SES</td>
+					<td>1</td>
+			</tr>
+			<tr>
+					<td>CloudWatch alarm</td>
+					<td>Triggered successfully</td>
+			</tr>
+			<tr>
+					<td>Alarm trigger time</td>
+					<td>24.61 seconds</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="performance-analysis">Performance Analysis</h3>
+<p>Based on the experimental results, the asynchronous approach shows an advantage in API response time over the synchronous approach.</p>
+<p>For 20 orders, the synchronous approach achieved a 95% success rate, with an average API response time of 774.74 ms and a P95 of 2,238.70 ms.</p>
+<p>In contrast, the asynchronous approach achieved a 100% success rate, with an average API response time of 135.30 ms and a P95 of 245.45 ms.</p>
+<p>When the load was increased to 50 orders, the asynchronous approach still maintained a 100% success rate. The average API response time was 102.47 ms, and the P95 was 166.29 ms.</p>
+<p>These results show that the asynchronous approach can accept requests quickly and remain stable in the test scenarios that were run.</p>
+<p>However, the concurrency level was not the same across the test runs. Therefore, there is not enough evidence to conclude that the asynchronous approach has better end-to-end processing performance than the synchronous approach.</p>
+<h3 id="observations-and-limitations">Observations and Limitations</h3>
+<ul>
+<li>For the synchronous approach with 20 orders, 19 requests succeeded and 1 request returned an HTTP 500 error and was not recorded in DynamoDB.</li>
+<li>For the asynchronous approach, both the 20-order and 50-order loads achieved a 100% completion rate.</li>
+<li>The synchronous approach was tested with a concurrency of 5, while the asynchronous approach was tested with a concurrency of 1. This difference may affect the performance comparison.</li>
+<li>API response time does not equal the total time to complete the order processing workflow, especially in an asynchronous architecture.</li>
+<li>The number of FAILED orders for the synchronous approach in DynamoDB needs to be verified before finalizing the report.</li>
+<li>The results are for reference only and apply to the environment and the number of tests that were run.</li>
+</ul>
+<h2 id="evaluation-of-duplicate-prevention-and-failure-handling">Evaluation of Duplicate Prevention and Failure Handling</h2>
+<table>
+	<thead>
+			<tr>
+					<th>Scenario</th>
+					<th>Result</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Same <code>orderId</code> sent 5 times (asynchronous)</td>
+					<td>Only 1 SES email sent successfully, <code>emailCount</code> = 1</td>
+			</tr>
+			<tr>
+					<td>Same <code>orderId</code> sent 5 times (synchronous)</td>
+					<td><code>emailCount</code> = &hellip; (fill in your measured value)</td>
+			</tr>
+			<tr>
+					<td>Failed order (unverified email)</td>
+					<td>Order marked <code>FAILED</code>, CloudWatch alarm changed to <strong>In alarm</strong> after about <strong>24.61 seconds</strong></td>
+			</tr>
+	</tbody>
+</table>
+<p>These results show that duplicate prevention (DynamoDB and Step Functions) and failure recording and alerting work as designed. State clearly what the 24.61-second figure is measured from (for example, from the <code>stopDate</code> of the failed execution to the alarm <code>Timestamp</code>).</p>
+<h2 id="cost-evaluation">Cost Evaluation</h2>
+<p>Costs were tracked with AWS Cost Explorer, grouped by service. At the time of checking (November 12, 2026), the total cost was approximately <strong>USD 0.00</strong>. Lambda, Step Functions, and DynamoDB showed no significant charges.</p>
+<p>Cost Explorer data is updated with a delay, so the actual cost should be re-checked after 24 to 48 hours. The test volume was small (a few dozen orders), so the cost is expected to stay within the free tier and below the USD 5 budget set in section 5.2.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The asynchronous order processing system on AWS runs reliably in the scenarios tested:</p>
+<ul>
+<li><strong>API response time:</strong> 135.30 ms (20 orders) and 102.47 ms (50 orders, p95 = 166.29 ms), lower than the synchronous approach (774.74 ms).</li>
+<li><strong>Reliability:</strong> 100% of asynchronous orders reached <code>DONE</code>, while the synchronous approach reached 95% at 20 orders.</li>
+<li><strong>Duplicate prevention and monitoring:</strong> sending the same order 5 times resulted in only one processing run, and a failed order was marked <code>FAILED</code> with an alert after about 24.61 seconds.</li>
+</ul>
+<p><strong>Limitations:</strong> each load level was run only a few times, the two approaches used different concurrency levels, the SES sandbox limits sending to 1 email per second, and the final cost has not yet been confirmed. The results are therefore indicative only. For firmer conclusions about end-to-end performance, repeat the tests with the same concurrency level and run each several times.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/5-workshop/5.6-monitoring/" title="Monitoring"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/5-workshop/5.8-clean-up/" title="Clean up" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1795086408"></script>
+    <script src="/js/perfect-scrollbar.min.js?1795086408"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1795086408"></script>
+    <script src="/js/jquery.sticky.js?1795086408"></script>
+    <script src="/js/featherlight.min.js?1795086408"></script>
+    <script src="/js/highlight.pack.js?1795086408"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1795086408"></script>
+    <script src="/js/learn.js?1795086408"></script>
+    <script src="/js/hugo-learn.js?1795086408"></script>
+
+    <link href="/mermaid/mermaid.css?1795086408" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1795086408"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

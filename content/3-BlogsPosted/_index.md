@@ -1,0 +1,13 @@
+---
+title : "3. BlogPosted"
+date : "2026-10-03"
+weight : 3
+chapter : false
+
+---
+
+# [BUILDING A RESILIENT ORDER PROCESSING SYSTEM ON AWS WITH SQS, LAMBDA, AND CLOUDWATCH](blog-1/)🔗
+
+# [AMAZON DYNAMODB OR AMAZON RDS: WHICH IS THE BETTER CHOICE FOR AN ORDER SYSTEM?](blog-2/)🔗
+
+# [Blog 3:](blog-3/)🔗
